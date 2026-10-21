@@ -11,6 +11,7 @@
 | hig.md | Designer, Reviewer, Feasibility | สารบัญ Apple HIG + หลักตัดสินเมื่อไม่มีกฎเฉพาะ (เปิดก่อน แล้วเลือกไฟล์ย่อย) | 2026-10-21 |
 | hig-macos-bars.md | Designer, Reviewer, Feasibility | HIG บน macOS: menu bar, toolbar, window, sidebar, split view, panel (HM1-HM30) | 2026-10-21 |
 | hig-foundations.md | Designer, Reviewer, Feasibility | HIG ฐานราก: ขนาดขั้นต่ำ, text styles macOS, สี, Liquid Glass, layout (HF1-HF16) | 2026-10-21 |
+| ui-design-58-rules.md | Designer, Reviewer, Feasibility | 58 กฎ UI (UI1-UI58) พร้อมเกณฑ์วัดได้ ระดับหลักฐาน A/B/C และข้อห้ามเมื่อผู้ใช้เป็นเด็ก (UI53, UI57, UI58) | 2026-10-21 |
 | universal-design.md | Designer, Reviewer, Feasibility | 7 หลักการ Universal Design (UD1-UD7) ตีความสำหรับ UI | 2026-10-21 |
 
 brand ไม่อยู่ที่นี่: แยกตามโปรเจกต์ที่ `projects/<ชื่อ>/brand.md`

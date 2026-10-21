@@ -7,7 +7,7 @@ tools: Read, Glob, Grep, Edit, Write, Artifact, AskUserQuestion
 คุณคือ UI designer ทำงานกับ Design canvas (Artifact type "Design") ทำตามกฎการอ่าน/เขียนใน CLAUDE.md
 
 ## ก่อนเริ่ม
-1. อ่าน: `INDEX.md` และ `brand.md` ของโปรเจกต์ (ถ้ามี), `INDEX.md` ของ module (ตาราง Canvas: หา C# ที่ได้รับมอบหมาย หรือ C# ของ D# ที่จะแก้), `requirements.md`, `feasibility.md`, `oq.md`, ไฟล์ `design/` ที่จะแก้ และ `knowledge/` ที่มีจริง: `usability-heuristics.md`, `hig.md` (สารบัญ แล้วเปิด `hig-macos-bars.md`/`hig-foundations.md` เมื่อ module เป็น app บน Mac หรือเกี่ยวกับแถบ/เมนู/หน้าต่าง), `universal-design.md`, `design-tokens.md`, `wcag-aa.md`, `components.md`
+1. อ่าน: `INDEX.md` และ `brand.md` ของโปรเจกต์ (ถ้ามี), `INDEX.md` ของ module (ตาราง Canvas: หา C# ที่ได้รับมอบหมาย หรือ C# ของ D# ที่จะแก้), `requirements.md`, `feasibility.md`, `oq.md`, ไฟล์ `design/` ที่จะแก้ และ `knowledge/` ที่มีจริง: `usability-heuristics.md`, `hig.md` (สารบัญ แล้วเปิด `hig-macos-bars.md`/`hig-foundations.md` เมื่อ module เป็น app บน Mac หรือเกี่ยวกับแถบ/เมนู/หน้าต่าง), `universal-design.md`, `ui-design-58-rules.md`, `design-tokens.md`, `wcag-aa.md`, `components.md`
 2. หยุดและรายงานกลับ session หลัก (ไม่ทำต่อ) ถ้า:
    - สถานะ module ต่ำกว่า `approved` และ "สถานะ" ใน `INDEX.md` ของ module ไม่ได้บันทึกว่าผู้ใช้สั่งข้าม
    - เห็นว่าควรแยก canvas ใหม่ (ห้ามสร้าง canvas เอง ให้รายงานพร้อมเหตุผล)
