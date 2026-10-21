@@ -5,18 +5,28 @@ updated: 2026-10-21
 
 # school-bot
 
-<สรุปโปรเจกต์ 2-3 บรรทัด: ใครใช้ แก้ปัญหาอะไร (รอผู้ใช้ระบุ)>
+School Bot Studio: โปรแกรมติดตั้ง (Windows/Mac) สอน coding และหุ่นยนต์ให้นักเรียน ป.1–6 ของโรงเรียนลูกค้า SchoolBright ทุกชั้นใช้ UI เดียวกัน มี 3 ส่วนในโปรแกรม (Quiz Game, Arm Lab, Block Lab) และเว็บครูแยกต่างหาก
+**sketchbook เป็นแหล่งความจริงของ requirement และผลวิเคราะห์ทั้งหมด** (นำเข้าจากระบบเก่า `~/Documents/School Bot` ครบเมื่อ 2026-10-21 · ไม่ต้องเปิดโฟลเดอร์เดิม · แผนที่ ID เดิม → ไฟล์ใหม่ที่ `archive/2026-10-21_legacy-map.md`)
 
 ## Modules
 
 | Module | สรุป | สถานะ | อัปเดต | พึ่งพา | ไฟล์ |
 |---|---|---|---|---|---|
+| app-shell | โครงแอปนักเรียน: installer · แถบหน้าต่าง (สถานะบันทึก, ชิปอุปกรณ์) · login · หน้าหลัก · ตั้งค่า/ภาษา · มาสคอต | draft | 2026-10-21 | - | modules/app-shell/INDEX.md |
+| my-work | งานของฉัน: บันทึกบน cloud · ออฟไลน์/sync · export .ini · กู้คืนสำรอง · นำเข้า | draft | 2026-10-21 | app-shell | modules/my-work/INDEX.md |
+| quiz | Quiz Game (เมนูบทเรียน): แผนที่หน่วย/ด่าน · คำถาม 3 แบบ · ดาว 0–3 · ส่งคะแนนเข้า SchoolBright | draft | 2026-10-21 | app-shell | modules/quiz/INDEX.md |
+| arm-lab | สอนท่าแขนกล 6 ข้อต่อแล้วเล่นเป็นลำดับ (หุ่น Raspberry Pi) · ความปลอดภัยของหุ่น · โหมดครู · บันทึก cloud/.ini | draft | 2026-10-21 | app-shell, my-work | modules/arm-lab/INDEX.md |
+| block-lab | ต่อบล็อกสั่ง Arduino Uno · ดูโค้ด C++ · ตัวจำลองบอร์ดต่อสายอิสระ · stage มาสคอต · แผงข้อความจากบอร์ด | designed | 2026-10-21 | app-shell, my-work | modules/block-lab/INDEX.md |
+| teacher-web | เว็บครู (เบราว์เซอร์): ความคืบหน้า/คะแนน Quiz รายเทอม-รายปีตามห้อง · ตั้งค่า · แก้ปัญหาหุ่น | draft | 2026-10-21 | quiz | modules/teacher-web/INDEX.md |
 
-ลิงก์ canvas อยู่ในตาราง Canvas ของ `INDEX.md` แต่ละ module (1 module มีได้หลาย canvas)
+ลิงก์ canvas อยู่ในตาราง Canvas ของ `INDEX.md` แต่ละ module (1 module มีได้หลาย canvas) · ตอนนี้ลงทะเบียนแล้ว: C1 ที่ arm-lab, C1 ที่ block-lab · canvas อื่นของระบบเก่า (B, C, ARCHIVE) ยังไม่ลงทะเบียน ต้องถามผู้ใช้ก่อนใช้
 
 สถานะ: `draft` → `approved` → `designed` → `reviewed` → `built` (ใครเปลี่ยนดู CLAUDE.md)
+block-lab `designed` (D1–D5 publish ที่ C1 2026-10-21 · ผ่าน `approved` โดยผู้ใช้ยืนยัน 2026-10-21) · module อื่นเป็น `draft` · arm-lab ผ่าน feasibility ของ role 2 (`ruler`) แล้ว 2026-10-21 (ทำได้มีเงื่อนไข · รอผู้ใช้ยืนยัน → `approved`) · module อื่นยังไม่ผ่าน (มีผล Architect เดิม GO WITH CONDITIONS เป็นข้อมูลอ้างอิง)
 
 ## ลิงก์
 
-- Brand: brand.md
+- บริบทร่วม (ผู้ใช้, ขอบเขต MVP, การตัดสินใจร่วม, ข้อจำกัด, ความเสี่ยง, เกณฑ์ตรวจเฉพาะโปรเจกต์): context.md
+- Brand (สี, ฟอนต์, layout, motion, icon, voice + มาสคอต §8 + ข้อตัดสินหน้าจอ §9 + DS gap §10): brand.md
+- มาสคอต 10 ท่า: assets/mascot/schoolbot_mascot_sheet_10poses.png
 - Changelog: CHANGELOG.md
