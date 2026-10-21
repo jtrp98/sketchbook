@@ -19,4 +19,5 @@ updated: YYYY-MM-DD
 
 ## ลิงก์
 
+- Brand: brand.md
 - Changelog: CHANGELOG.md

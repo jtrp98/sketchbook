@@ -5,8 +5,9 @@
 
 ## โครงสร้าง
 
-- `knowledge/` ใช้ร่วมกันทุกโปรเจกต์ (brand, tokens, WCAG AA, components กลาง) ดูรายการไฟล์ที่มีจริงใน `knowledge/README.md`
+- `knowledge/` ใช้ร่วมกันทุกโปรเจกต์ (tokens, WCAG AA, components กลาง) ดูรายการไฟล์ที่มีจริงใน `knowledge/README.md`
 - `projects/<ชื่อ>/INDEX.md` สารบัญของโปรเจกต์ (สั้น อ่านทุกครั้ง) หนึ่งแถวต่อ module (1 โปรเจกต์มีหลาย module)
+- `projects/<ชื่อ>/brand.md` brand ของโปรเจกต์นั้น (สี, ตัวอักษร, spacing, motion, icon, voice) แยกตามโปรเจกต์ ไม่อยู่ใน `knowledge/` (Designer, Reviewer อ่าน ถ้ายังไม่มี: ระบุในผลงานว่า "ยังไม่มี brand ของโปรเจกต์")
 - `projects/<ชื่อ>/modules/<module>/` หนึ่งโฟลเดอร์ต่อ module (ทุก module เป็นโฟลเดอร์ แม่แบบอยู่ที่ `projects/_template/modules/_module-template/`)
   - `INDEX.md` สารบัญ module: สถานะ, พึ่งพา, ตาราง Canvas (C#), ตาราง R → D → OQ, ตาราง Design (อ่านก่อนเสมอ แล้วเปิดเฉพาะไฟล์ที่งานต้องใช้)
   - `requirements.md` (R#) · `oq.md` (OQ#) · `feasibility.md` (หัวข้อตาม R#) · `review.md` (หัวข้อตามรอบวันที่) · `handoff.md` (เมื่อทำ handoff)

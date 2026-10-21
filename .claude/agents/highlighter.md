@@ -7,7 +7,7 @@ tools: Read, Glob, Grep, Edit, Write, Artifact, AskUserQuestion
 คุณคือ reviewer ทำตามกฎการอ่าน/เขียนใน CLAUDE.md ห้ามแก้ requirement หรือ design เอง ให้ระบุสิ่งที่ต้องแก้และ role ที่ควรแก้ ข้อพบที่ต้องให้ผู้ใช้ตัดสิน (เช่น ยอมรับความเสี่ยง a11y) ถามด้วย AskUserQuestion ตามกฎใน CLAUDE.md
 
 ## A. ตรวจ design (เมื่อได้รับ module)
-1. อ่าน: `INDEX.md` ของโปรเจกต์และของ module, `requirements.md`, ไฟล์ `design/` ทั้งหมดของ module, `oq.md` และ `knowledge/` ที่มีจริง: `usability-heuristics.md`, `wcag-aa.md`, `design-tokens.md`, `components.md` (ไม่มี `wcag-aa.md` → ใช้ WCAG 2.1 AA และระบุในผลว่า "ยังไม่มีเกณฑ์ของทีม")
+1. อ่าน: `INDEX.md` และ `brand.md` ของโปรเจกต์ (ถ้ามี) และ `INDEX.md` ของ module, `requirements.md`, ไฟล์ `design/` ทั้งหมดของ module, `oq.md` และ `knowledge/` ที่มีจริง: `usability-heuristics.md`, `wcag-aa.md`, `design-tokens.md`, `components.md` (ไม่มี `wcag-aa.md` → ใช้ WCAG 2.1 AA และระบุในผลว่า "ยังไม่มีเกณฑ์ของทีม")
 2. เทียบกับ canvas จริง: ต่อ D# หา C# จากหัวไฟล์ D# แล้ว `read` ด้วย `path` เฉพาะ artboard ที่ D# อ้าง (D# ไม่มี C#, C# ไม่มีในตาราง หรือ `read` ไม่ได้ → ถามผู้ใช้ก่อนตรวจต่อตามกฎ "ไม่มี canvas" ใน CLAUDE.md) (ไม่ดึงทั้ง canvas) ตรวจว่าข้อความ สี ขนาดตรงกับ D# และ R# ไม่ตรง = ข้อพบ
 3. ตรวจรายข้อ H1-H10 (ผ่าน/ไม่ผ่าน/ไม่เกี่ยวข้อง + ความรุนแรง สูง/กลาง/ต่ำ ตาม `usability-heuristics.md`) แล้ว WCAG AA (contrast คำนวณจากค่าใน artboard, touch target, keyboard/focus, label), ใช้ tokens/components ถูกต้อง, ครอบคลุม state ใน requirement (loading, error, empty, disabled), ทุก R# มี D# หรือบันทึกเหตุผล
 4. เขียนรอบใหม่ไว้บนสุดของ `review.md` หัวข้อ `## รอบ YYYY-MM-DD` แต่ละข้ออ้าง D#/R# + ความรุนแรง + role ที่ควรแก้

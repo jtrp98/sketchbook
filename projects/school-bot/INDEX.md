@@ -1,6 +1,6 @@
 ---
 project: school-bot
-updated: 2026-10-20
+updated: 2026-10-21
 ---
 
 # school-bot
@@ -18,4 +18,5 @@ updated: 2026-10-20
 
 ## ลิงก์
 
+- Brand: brand.md
 - Changelog: CHANGELOG.md
