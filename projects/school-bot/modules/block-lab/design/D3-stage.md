@@ -3,18 +3,18 @@ module: block-lab
 design: D3
 covers: [R7]
 canvas: C1
-updated: 2026-10-21
+updated: 2026-10-22
 ---
 
 # D3 · stage มาสคอต (SCR-18)
 
-Canvas C1 · publish แล้ว 2026-10-21 · canvas version 6 (id 1792570650-b777) · ยังไม่ได้ render ตรวจ · ยังไม่ได้ตรวจบน canvas โดยผู้ใช้
+Canvas C1 · publish แล้ว 2026-10-21 (v6) · **แก้เฉพาะความสูงชิ้นส่วนตามพื้นที่ 840 publish 2026-10-22 → canvas version 12 (id 1792637865-e578)** · ยังไม่ได้ render ตรวจ · ยังไม่ได้ตรวจบน canvas โดยผู้ใช้
 
 ## Artboard
 | ไฟล์ | บทบาท |
 |---|---|
 | `StageStates.dc.html` (C) 1440×1900 | 6 สถานะ: ยังไม่เริ่ม · กำลังจำลองเปลี่ยนท่า+พูด · ท่าวิ่งอัตโนมัติ · หยุดเพราะ LED เสีย · สลับท่าเร็วเกิน · ข้อความพูดยาว |
-| `StagePane.dc.html` 680×514 | ชิ้นส่วน (prop: pose, say, x, y, frozen, fast, state, h) |
+| `StagePane.dc.html` 680×498 (เดิม 514 · เวที = h − 120 = 378 · ตัวละคร 144 + กล่องคำพูด 3 บรรทัดยังพอ) | ชิ้นส่วน (prop: pose, say, x, y, frozen, fast, state, h) |
 | `Mascot.dc.html` | ตัดท่าจากแผ่น 10 ท่า `/_blob/f7787b9ec0315b4d03a7bf7c07fc644c` (assets/mascot/schoolbot_mascot_sheet_10poses.png) ด้วย CSS · แสดงสูง 144px (≤ ~150) |
 | `Main.dc.html` | แท็บ "เวที (stage)": ท่าเปลี่ยนเป็น "ดีใจ" หลังกดปุ่มใน Tweak `run=running` |
 
