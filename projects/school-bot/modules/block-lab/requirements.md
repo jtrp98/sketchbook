@@ -56,7 +56,7 @@ updated: 2026-10-28
 | School Bot | Serial | Serial print → Output · ข้อความที่ได้รับ (มน) · มีข้อความเข้ามา (หกเหลี่ยม) (OQ153) · `Serial.begin` อัตโนมัติ |
 | School Bot | Remote Control | **ว่างใน MVP** (Infrared Remote Control อยู่ Sensor ตาม OQ164) |
 | พิเศษ | ตัวละคร (Stage) | ขยับ, พูด, เปลี่ยนท่า (10 ท่า DEC-30) · แสดงเฉพาะเมื่อเลือก stage · ข้ามเมื่อส่งลงบอร์ด (OQ159 · DEC-23) |
-| - | บล็อกค่าสี | เลือกสีพื้นฐาน หรือ R G B 0–255 · หมวด → OQ166 |
+| School Bot | Display · บล็อกค่าสี | เลือกสีพื้นฐาน 8 สี (ชื่อไทย) หรือ R G B 0–255 · รับเฉพาะตัวเลข · เกิน → 0/255 + ข้อความใต้ช่อง · ว่าง = 0 (OQ166, OQ172) |
 
 อุปกรณ์รับค่า: ปุ่มกด → `digitalRead`, potentiometer → `analogRead` โต้ตอบได้ระหว่างจำลอง (DEC-28)
 
