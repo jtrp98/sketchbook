@@ -1,6 +1,6 @@
 ---
 module: my-work
-updated: 2026-10-21
+updated: 2026-10-26
 status: draft
 depends_on: [app-shell]
 ---
