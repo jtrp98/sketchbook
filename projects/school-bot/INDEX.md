@@ -14,7 +14,7 @@ School Bot Studio: โปรแกรมติดตั้ง (Windows/Mac) ส�
 |---|---|---|---|---|---|
 | app-shell | โครงแอปนักเรียน: installer · แถบหน้าต่าง (สถานะบันทึก, ชิปอุปกรณ์) · login · หน้าหลัก · ตั้งค่า/ภาษา · มาสคอต | draft | 2026-10-30 | - | modules/app-shell/INDEX.md |
 | my-work | งานของฉัน: บันทึกบน cloud · ออฟไลน์/sync · export .ini · กู้คืนสำรอง · นำเข้า | draft | 2026-10-26 | app-shell | modules/my-work/INDEX.md |
-| quiz | Quiz Game (เมนูบทเรียน): แผนที่หน่วย/ด่าน · คำถาม 3 แบบ · ดาว 0–3 · ส่งคะแนนเข้า SchoolBright | draft | 2026-10-21 | app-shell | modules/quiz/INDEX.md |
+| quiz | Quiz Game (เมนูบทเรียน): แผนที่หน่วย/ด่าน · คำถาม 3 แบบ · ดาว 0–3 · ส่งคะแนนเข้า SchoolBright | draft | 2026-10-30 | app-shell | modules/quiz/INDEX.md |
 | arm-lab | สอนท่าแขนกล 6 ข้อต่อแล้วเล่นเป็นลำดับ (หุ่น Raspberry Pi) · ความปลอดภัยของหุ่น · โหมดครู · บันทึก cloud/.ini | draft | 2026-10-21 | app-shell, my-work | modules/arm-lab/INDEX.md |
 | block-lab | ต่อบล็อกสั่ง Arduino Uno (ป.3–6 เน้น ป.3–4) · ดูโค้ด C++ · ตัวจำลองบอร์ดต่อสายอิสระ + ตัวช่วย · บล็อกอ้างอุปกรณ์ + เตือนก่อนรัน · stage มาสคอต · แผงข้อความจากบอร์ด | approved | 2026-10-30 | app-shell, my-work | modules/block-lab/INDEX.md |
 | teacher-web | เว็บครู (เบราว์เซอร์): ความคืบหน้า/คะแนน Quiz รายเทอม-รายปีตามห้อง · ตั้งค่า · แก้ปัญหาหุ่น | draft | 2026-10-21 | quiz | modules/teacher-web/INDEX.md |
