@@ -1,6 +1,6 @@
 ---
 project: school-bot
-updated: 2026-11-02
+updated: 2026-11-03
 ---
 
 # school-bot
@@ -16,7 +16,7 @@ School Bot Studio: โปรแกรมติดตั้ง (Windows/Mac) ส�
 | my-work | งานของฉัน: บันทึกบน cloud · ออฟไลน์/sync · export .ini · กู้คืนสำรอง · นำเข้า | draft | 2026-10-26 | app-shell | modules/my-work/INDEX.md |
 | quiz | Quiz Game (เมนูบทเรียน): เลือก Level 1–6 (= ป.1–6) · แผนที่ยาว 2 เทอม + ตัวบอกเทอม · แบบฝึก 4 กลุ่ม 5–8 ข้อ · ดาว 0–3 · phase 1 ยังไม่ส่ง SchoolBright (เก็บที่ cloud School Bot) | approved | 2026-11-02 | app-shell | modules/quiz/INDEX.md |
 | arm-lab | สอนท่าแขนกล 6 ข้อต่อแล้วเล่นเป็นลำดับ (หุ่น Raspberry Pi) · ความปลอดภัยของหุ่น · โหมดครู · บันทึก cloud/.ini | draft | 2026-10-21 | app-shell, my-work | modules/arm-lab/INDEX.md |
-| block-lab | ต่อบล็อกสั่ง Arduino Uno (ป.3–6 เน้น ป.3–4) · ดูโค้ด C++ · ตัวจำลองบอร์ดต่อสายอิสระ + ตัวช่วย · บล็อกอ้างอุปกรณ์ + เตือนก่อนรัน · stage มาสคอต · แผงข้อความจากบอร์ด | draft | 2026-11-02 | app-shell, my-work | modules/block-lab/INDEX.md |
+| block-lab | ต่อบล็อกสั่ง Arduino Uno (ป.3–6 เน้น ป.3–4) · ดูโค้ด C++ · ตัวจำลองบอร์ดต่อสายอิสระ + ตัวช่วย · บล็อกอ้างอุปกรณ์ + เตือนก่อนรัน · stage มาสคอต · แผงข้อความจากบอร์ด | draft | 2026-11-03 | app-shell, my-work | modules/block-lab/INDEX.md |
 | teacher-web | เว็บครู (เบราว์เซอร์): ความคืบหน้า/คะแนน Quiz รายเทอม-รายปีตามห้อง · ตั้งค่า · แก้ปัญหาหุ่น | draft | 2026-10-21 | quiz | modules/teacher-web/INDEX.md |
 
 ลิงก์ canvas อยู่ในตาราง Canvas ของ `INDEX.md` แต่ละ module (1 module มีได้หลาย canvas) · ตอนนี้ลงทะเบียนแล้ว: C1 ที่ arm-lab, C1 ที่ block-lab, C1 ที่ quiz (ใช้ Canvas A ร่วม) · canvas อื่นของระบบเก่า (B, C, ARCHIVE) ยังไม่ลงทะเบียน ต้องถามผู้ใช้ก่อนใช้
