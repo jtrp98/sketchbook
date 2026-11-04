@@ -10,6 +10,7 @@
 - `projects/<ชื่อ>/brand.md` brand ของโปรเจกต์นั้น (สี, ตัวอักษร, spacing, motion, icon, voice) แยกตามโปรเจกต์ ไม่อยู่ใน `knowledge/` (Designer, Reviewer อ่าน ถ้ายังไม่มี: ระบุในผลงานว่า "ยังไม่มี brand ของโปรเจกต์")
 - `projects/<ชื่อ>/context.md` (ถ้ามี) บริบทร่วมของโปรเจกต์ที่ไม่ใช่ของ module เดียว: ผู้ใช้, ขอบเขต, การตัดสินใจร่วม, ข้อจำกัด, ความเสี่ยง, เกณฑ์ตรวจเฉพาะโปรเจกต์ (อ่านเมื่อต้องรู้ภาพรวม ไม่ต้องอ่านทุกครั้ง)
 - `projects/<ชื่อ>/assets/` (ถ้ามี) ไฟล์ภาพ/asset ของโปรเจกต์ที่ brand.md อ้างถึง (เช่น มาสคอต)
+- `projects/<ชื่อ>/system/` (ถ้ามี) งานข้าม module: `brief.md` (goal + comment ของผู้ใช้), `inventory.md`, `audit.md` (AU#), `plan.md` เขียนโดย `auditor` · `spec.md` (R# ระดับระบบ ของกลางที่ทุก module ต้องทำตาม) เขียนโดย session หลัก
 - `projects/<ชื่อ>/modules/<module>/` หนึ่งโฟลเดอร์ต่อ module (ทุก module เป็นโฟลเดอร์ แม่แบบอยู่ที่ `projects/_template/modules/_module-template/`)
   - `INDEX.md` สารบัญ module: สถานะ, พึ่งพา, ตาราง Canvas (C#), ตาราง R → D → OQ, ตาราง Design (อ่านก่อนเสมอ แล้วเปิดเฉพาะไฟล์ที่งานต้องใช้)
   - `requirements.md` (R#) · `oq.md` (OQ#) · `feasibility.md` (หัวข้อตาม R#) · `review.md` (หัวข้อตามรอบวันที่) · `handoff.md` (เมื่อทำ handoff)
@@ -74,10 +75,11 @@ agent ย่อยส่งต่อกันเองไม่ได้ ผล�
 | ทำได้ไหม / logic / edge case | 2. Feasibility | agent `ruler` | มี `requirements.md` |
 | ออกแบบ / สร้าง UI / design | 3. Designer | agent `crayon` | สถานะ `approved` ขึ้นไป และระบุ C# ที่จะใช้ (มีในตาราง Canvas ของ module ไม่มี → ถามผู้ใช้ตามกฎ "ไม่มี canvas") |
 | ตรวจ / a11y / handoff / ตรวจ INDEX | 4. Reviewer | agent `highlighter` | review design: สถานะ `designed` ขึ้นไป · handoff: สถานะ `reviewed` · ทั้งสองกรณี: ทุก D# มี C# ที่ `read` ได้ |
+| ตรวจทั้งระบบ / consistency ข้ามหน้า / ปรับ req รวมหลาย module | 5. System auditor | agent `auditor` | มี `system/brief.md` และทุก module ใน brief มี C# ที่ `read` ได้ |
 
 ไม่ผ่านเงื่อนไข: บอกผู้ใช้ว่าขาดอะไร ถ้าผู้ใช้สั่งให้ข้าม ให้ส่งได้และบันทึกใน "สถานะ" ของ `INDEX.md` ของ module ว่าข้ามขั้นใด (วันที่ + เหตุผล)
 
-**Canvas:** 1 module มีได้หลาย canvas (Design canvas = Artifact type "Design") แต่ 1 canvas อยู่ใน module เดียว ลงทะเบียนในตาราง Canvas ของ `INDEX.md` ของ module (C#, ชื่อ, ลิงก์, สิทธิ์, ใช้กับ D#) ไม่ลงใน `INDEX.md` ของโปรเจกต์ session หลักเป็นผู้สร้าง canvas agent ห้ามสร้าง canvas เอง
+**Canvas:** 1 module มีได้หลาย canvas (Design canvas = Artifact type "Design") และ 1 canvas ใช้ร่วมหลาย module ได้ (ผู้ใช้ตัดสิน 2026-11-03) ลงทะเบียนในตาราง Canvas ของ `INDEX.md` ของทุก module ที่ใช้ (C#, ชื่อ, ลิงก์, สิทธิ์, ใช้กับ D# และ artboard ของ module นั้น) C# นับแยกต่อ module · canvas ที่ใช้ร่วมให้ระบุในช่องชื่อว่าใช้ร่วมกับ module ใด และระบุใน `INDEX.md` ของโปรเจกต์ (เพื่อให้รู้ว่าแก้ของกลางบน canvas นี้กระทบ module ใด) session หลักเป็นผู้สร้าง canvas agent ห้ามสร้าง canvas เอง
 
 **ไม่มี canvas = ถามผู้ใช้ก่อนเริ่มงานทุกครั้ง** (เพื่อให้ไฟล์ใน `sketchbook/` กับ artifact sync กันได้เสมอ) ก่อนเริ่มงานที่ใช้ canvas (ออกแบบ, review design, handoff) ถ้าเข้ากรณีใดกรณีหนึ่ง:
 - module ยังไม่มี C# ในตาราง Canvas

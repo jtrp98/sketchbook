@@ -1,6 +1,6 @@
 ---
 module: my-work
-updated: 2026-10-26
+updated: 2026-11-03
 status: draft
 depends_on: [app-shell]
 ---
@@ -36,8 +36,9 @@ depends_on: [app-shell]
 
 | ID | ชื่อ | ลิงก์ | สิทธิ์ | ใช้กับ |
 |---|---|---|---|---|
+| C1 | School Bot – หน้าควบคุมแขนกล (ประถม) (Canvas A · ใช้ร่วมกับ arm-lab, quiz, app-shell) | https://claude.ai/artifact/AnEWv6UNbgcNvUXS1sfHQd | shared ในองค์กร (ผู้ใช้เป็นเจ้าของ · `list files` ได้ 2026-11-03) | frame: MyWorkV1, MyWorkV1Block (SCR-09 · ผู้ใช้เรียก "File") · ยังไม่มี D# |
 
-ยังไม่มี C# ที่ลงทะเบียนสำหรับ module นี้ → ถามผู้ใช้ก่อนเริ่มงาน canvas (frame ของ module นี้อยู่ใน canvas ที่ลงทะเบียนเป็น C1 ของ arm-lab · รอผู้ใช้ตัดสินเรื่อง 1 canvas : 1 module)
+ลงทะเบียน C1 2026-11-03 ตามกฎ canvas ใช้ร่วมหลาย module (ผู้ใช้ตัดสิน 2026-11-03)
 
 ## Canvas และ frame ที่พบในระบบเก่า (ยังไม่ใช่ C#/D#)
 

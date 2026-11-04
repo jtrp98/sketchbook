@@ -1,6 +1,6 @@
 ---
 module: app-shell
-updated: 2026-10-30
+updated: 2026-11-03
 status: draft
 depends_on: []
 ---
@@ -37,8 +37,9 @@ depends_on: []
 
 | ID | ชื่อ | ลิงก์ | สิทธิ์ | ใช้กับ |
 |---|---|---|---|---|
+| C1 | School Bot – หน้าควบคุมแขนกล (ประถม) (Canvas A · ใช้ร่วมกับ arm-lab, quiz, my-work) | https://claude.ai/artifact/AnEWv6UNbgcNvUXS1sfHQd | shared ในองค์กร (ผู้ใช้เป็นเจ้าของ · `list files` ได้ 2026-11-03) | frame: HomeV6A + HomeRail (FRM-01 · Home), WindowBarV1 (สำเนา FRM-05), ConnectV3 + Many/Connected/Fail2 (FRM-06 · Connected Page ย้ายมาเป็นของ module นี้ตามผู้ใช้ 2026-11-03 · `system/brief.md`) · ยังไม่มี D# |
 
-**ยังไม่มี C# ที่ลงทะเบียนสำหรับ module นี้ → ถามผู้ใช้ก่อนเริ่มงาน canvas** (artifact เดิมด้านล่างยังไม่ได้ `read` ยืนยันและยังไม่ได้ตัดสินเรื่อง 1 canvas : 1 module)
+ลงทะเบียน C1 2026-11-03 ตามกฎ canvas ใช้ร่วมหลาย module (ผู้ใช้ตัดสิน 2026-11-03) · Canvas B (P1JcYv8G…) ยังไม่ลงทะเบียน
 
 ## Canvas และ frame ที่พบในระบบเก่า (ยังไม่ใช่ C#/D#)
 
