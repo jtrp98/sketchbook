@@ -15,6 +15,8 @@
 | arduino-cloud-editor-syntax.md | Designer, Reviewer, Feasibility | ข้อเท็จจริงของ Arduino Cloud Editor เท่านั้น (ไม่มีข้อเสนอ): สีตามกลุ่มคำ, autocomplete, วงเล็บคู่, LSP (AS1-AS6) | 2026-10-29 |
 | universal-design.md | Designer, Reviewer, Feasibility | 7 หลักการ Universal Design (UD1-UD7) ตีความสำหรับ UI | 2026-10-21 |
 
+โปรเจกต์ที่มี Design System (เช่น school-bot): ค่า token/component ใช้จาก DS ไม่ใช้ `design-tokens.md`/`components.md` ข้างบน (ดู CLAUDE.md หัวข้อ "Design System กลาง")
+
 brand ไม่อยู่ที่นี่: แยกตามโปรเจกต์ที่ `projects/<ชื่อ>/brand.md`
 
 (สร้างไฟล์ตามตารางเมื่อมีเนื้อหา แล้วอัปเดตตารางนี้ให้ตรง)
