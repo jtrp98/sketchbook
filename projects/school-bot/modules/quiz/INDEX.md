@@ -1,6 +1,6 @@
 ---
 module: quiz
-updated: 2026-11-02
+updated: 2026-11-04
 status: approved
 depends_on: [app-shell]
 ---
@@ -50,7 +50,7 @@ depends_on: [app-shell]
 
 | ID | ชื่อ | ลิงก์ | สิทธิ์ | ใช้กับ |
 |---|---|---|---|---|
-| C1 | School Bot – หน้าควบคุมแขนกล (ประถม) (Canvas A · ใช้ร่วมกับ arm-lab C1) | https://claude.ai/artifact/AnEWv6UNbgcNvUXS1sfHQd | shared ในองค์กร (ผู้ใช้เป็นเจ้าของ · `read` ได้ 2026-10-30, 2026-10-31) | R1–R18 · **D1–D4** (QuizLevelsV1 · QuizMapV1 · QuizPlayV1 · QuizResultV1 · publish แล้ว 2026-11-01 · C1 version 708 · D2 แก้ใช้ภาพแผนที่/node จริงในเครื่อง 2026-11-01 รอ publish ต่อจาก v711) · frame เดิม: LearnMapV1 (FRM-12 ฐานเก่า ไม่ได้แก้ · ถูกแทนด้วย QuizMapV1 · LearnMapV1 ยังอยู่บน canvas ใช้อ้างอิง) · artboard ที่ผู้ใช้ชี้: #artboard-c012d50f49ce |
+| C1 | School Bot – หน้าควบคุมแขนกล (ประถม) (Canvas A · ใช้ร่วมกับ arm-lab C1) | https://claude.ai/artifact/AnEWv6UNbgcNvUXS1sfHQd | shared ในองค์กร (ผู้ใช้เป็นเจ้าของ · `read` ได้ 2026-10-30, 2026-10-31) | R1–R18 · **D1–D4** (QuizLevelsV1 · QuizMapV1 · QuizPlayV1 · QuizResultV1 · publish แล้ว 2026-11-01 · C1 version 708 · D2 แก้ใช้ภาพแผนที่/node จริงในเครื่อง 2026-11-01 รอ publish ต่อจาก v711) · frame เดิม: LearnMapV1 (FRM-12 ฐานเก่า ไม่ได้แก้ · ถูกแทนด้วย QuizMapV1 · LearnMapV1 ยังอยู่บน canvas ใช้อ้างอิง) · artboard ที่ผู้ใช้ชี้: #artboard-c012d50f49ce · **รอบ 1 (2026-11-04): QuizLevelsV1 = N3 + dc-import SidebarN3 · QuizMapV1/PlayV1/ResultV1 = N2 (บ้าน │ โลโก้ │ "บทเรียน · Level 1") ผ่าน dc-import WindowBarV1 แทน stand-in · ตัดชิปออฟไลน์ออกจากแถบ · publish แล้วที่ C1 v757 (2026-11-04 · ผู้ใช้อนุมัติ · ยังไม่ได้เปิดดู render จริง · ทดสอบคลิกลิงก์บ้าน/sidebar ใน Play ว่าคลิกครั้งเดียวผ่านไหม)** |
 
 หมายเหตุ C1: ผู้ใช้ตัดสิน 2026-10-30 ให้ quiz ใช้ Canvas A ร่วมกับ arm-lab (ยกเว้นกฎ "1 canvas อยู่ใน module เดียว" เฉพาะกรณีนี้ · canvas เป็นเจ้าของเดียวกัน)
 

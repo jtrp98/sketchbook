@@ -1,6 +1,6 @@
 ---
 module: my-work
-updated: 2026-11-03
+updated: 2026-11-04
 status: draft
 depends_on: [app-shell]
 ---
@@ -36,7 +36,7 @@ depends_on: [app-shell]
 
 | ID | ชื่อ | ลิงก์ | สิทธิ์ | ใช้กับ |
 |---|---|---|---|---|
-| C1 | School Bot – หน้าควบคุมแขนกล (ประถม) (Canvas A · ใช้ร่วมกับ arm-lab, quiz, app-shell) | https://claude.ai/artifact/AnEWv6UNbgcNvUXS1sfHQd | shared ในองค์กร (ผู้ใช้เป็นเจ้าของ · `list files` ได้ 2026-11-03) | frame: MyWorkV1, MyWorkV1Block (SCR-09 · ผู้ใช้เรียก "File") · ยังไม่มี D# |
+| C1 | School Bot – หน้าควบคุมแขนกล (ประถม) (Canvas A · ใช้ร่วมกับ arm-lab, quiz, app-shell) | https://claude.ai/artifact/AnEWv6UNbgcNvUXS1sfHQd | shared ในองค์กร (ผู้ใช้เป็นเจ้าของ · `list files` ได้ 2026-11-03) | frame: MyWorkV1, MyWorkV1Block (SCR-09 · ผู้ใช้เรียก "File") · ยังไม่มี D# · **รอบ 1 (2026-11-04): แถบ N3 สูง 60 + พื้นที่ 840 + dc-import SidebarN3 publish แล้วที่ C1 v757 (2026-11-04 · ผู้ใช้อนุมัติ · ยังไม่ได้เปิดดู render จริง)** |
 
 ลงทะเบียน C1 2026-11-03 ตามกฎ canvas ใช้ร่วมหลาย module (ผู้ใช้ตัดสิน 2026-11-03)
 

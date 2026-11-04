@@ -57,3 +57,13 @@ DS: https://claude.ai/artifact/DgwzCEnxThrSoxnE5ZrNoy · version ที่ publi
 
 - ชิปมีกรอบ · ช่องกรอก/ค้นหา · การ์ดคำถาม/ด่าน Quiz · ตารางเว็บครู · wizard · ชุดควบคุมพื้นที่ต่อบล็อก · แผงลอย/บล็อก/terminal/ตัวแก้โค้ด Block Lab · Attention Ring (มีกฎ ไม่มี preview) · แถบข้อมูลในหน้า
 - ไม่ได้ render ตรวจภาพ · ไม่ได้ทดสอบคีย์บอร์ด/ผู้อ่านจอ · ไม่ได้แตะ INDEX/CHANGELOG ของโปรเจกต์
+
+## เติมตามคำอนุมัติของผู้ใช้ 2026-11-04 (OQ25–OQ27 · หน้าเชื่อมต่อหุ่น · DS เวอร์ชัน 11)
+
+ผู้ใช้อนุมัติ 4 ข้อ (เติมเฉพาะข้อที่บล็อก) ใช้เฉพาะ token ที่มีแล้ว ไม่มี Hex ใหม่:
+- `z-windowbar` = 65 (ต่ำกว่า `z-stop` 70, สูงกว่า `z-bottombar` 60 · แก้ CR-10/AUD-F01) · tokens.json + README §12 ข้อ 12
+- `sb-actionbar` แถบปุ่มล่าง: พื้น `surface` ขอบบน `border-default` สี `border` · padding `space-4`/`space-6` · `z-bottombar` · [หยุด ซ้ายสุด] … [รอง][หลัก] · gap `space-3` · ปุ่มสูง `control-lg` (56)
+- `sb-notice` กล่องสถานะ: info (`action-primary-subtle` + `border-strong`) · warning (`warning-bg` + `warning-strong`) · error (พื้น `surface` ขอบ+ไอคอน `danger`) · success (ขอบ+ไอคอน `success`)
+- `sb-check` checkbox: กล่อง `icon-lg` (24) `radius-sm` · ติ๊ก = `action-primary` + เครื่องหมายถูก `text-on-dark` · แถวสูงไม่ต่ำกว่า `control-sm` (44)
+- ยังไม่เติม (ใช้ของเดิมใน DS ไปก่อน): แถบความคืบหน้า, select/input นอกชื่องาน, การ์ดข้อมูลไม่กดได้, มาสคอตท่าอื่น
+- ยังไม่ได้ทำ: preview.html / README ของ component ใหม่ 3 ตัว · ยังไม่ได้ render ตรวจ · ไม่ได้อัปเดต `design-system.json` (lastChange)
