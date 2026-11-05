@@ -1,6 +1,6 @@
 ---
 project: school-bot
-updated: 2026-11-04
+updated: 2026-11-05
 scope: สรุปการเติมเนื้อหา Design System artifact (รอบที่ 3 · ไม่ใช่งานของ module · ไม่มี D#)
 ---
 
@@ -67,3 +67,24 @@ DS: https://claude.ai/artifact/DgwzCEnxThrSoxnE5ZrNoy · version ที่ publi
 - `sb-check` checkbox: กล่อง `icon-lg` (24) `radius-sm` · ติ๊ก = `action-primary` + เครื่องหมายถูก `text-on-dark` · แถวสูงไม่ต่ำกว่า `control-sm` (44)
 - ยังไม่เติม (ใช้ของเดิมใน DS ไปก่อน): แถบความคืบหน้า, select/input นอกชื่องาน, การ์ดข้อมูลไม่กดได้, มาสคอตท่าอื่น
 - ยังไม่ได้ทำ: preview.html / README ของ component ใหม่ 3 ตัว · ยังไม่ได้ render ตรวจ · ไม่ได้อัปเดต `design-system.json` (lastChange)
+
+## DS gap รอบ Studio + บทเรียน (แผน 2 · ผู้ใช้ approve 2026-11-05 · จดอย่างเดียว ยังไม่เติม)
+
+CI = CI ของ School Bot Studio: ของที่ Arm Lab/DS มีแล้วใช้ตามเดิม · ของด้านล่าง Arm Lab และ DS (v ล่าสุด 1793852632-4138 · tokens + 14 component + `sb-actionbar` `sb-notice` `sb-check`) ยังไม่มี ต้องออกแบบใหม่ให้เป็นตระกูลเดียวกัน · **ค่าทุกตัวต้องถามผู้ใช้ก่อนเติม (AskUserQuestion) เมื่อถึงคิวงานนั้น** · ตรวจกับ `project/README.md` §13 และ `tokens.json` แล้ว
+
+| G | DS gap: ต้องการอะไร | ใช้ที่ | ใกล้เคียงที่สุดใน DS | U / คิว |
+|---|---|---|---|---|
+| G1 | **node ภารกิจ 3 state** (ผ่าน / กำลังเล่น / ล็อก) เป็น shape เวกเตอร์ตาม `Pass/Current/Lock.svg` + ตัวหนังสือจริงข้างใน (เลขด่าน, ป้ายสถานะ) + ดาว · ไม่ใช้ภาพตัด (design-taste 15) | QuizMapV1 (quiz D2) | ไม่มี · ไฟล์ต้นแบบอยู่ที่ `assets/ref/Quiz/` ใน sketchbook ซึ่งไม่ใช่ DS → ต้องนำเข้า DS ก่อนใช้ | U11 · บทเรียน |
+| G2 | **timeline / แผนที่ย่อ + ตัวบอกเทอม** ภาษาภาพเดียวกับ node ไม่ใช้สีเข้มหรือกรอบ focus หนัก (design-taste 16) | QuizMapV1 ล่าง/บน | `Tab` (segmented) สำหรับสลับเทอม · timeline ไม่มี | U12 · บทเรียน |
+| G3 | **สีของบทเรียน** · **ตัดสินแล้ว 2026-11-05 (ผู้ใช้):** (1) ดาว = token ใหม่ `star-fill` #F2C94C + `star-border` #B07F00 (เติม DS v14 แล้ว · ขอบ 3.57:1 บน surface ผ่าน 1.4.11 · เนื้อเป็นตกแต่ง) (2) สถานะ node ใช้ token เดิม: ผ่าน `success` · กำลังเล่น `action-primary` · ล็อก `text-secondary` + `off-bg` (3) accent ประจำ level = `level-1`…`level-6` ค่าเลือกคู่กับภาพธีม (G4) · ทับ ci-audit Q18 | QuizLevelsV1, QuizMapV1, QuizResultV1 | เหลือ: ค่า `level-1..6` (รอ G4) · **ดาวว่าง** ยังไม่มีแบบใน DS (DS gap) · D1/D2/D4 ยังใช้ Hex เดิม ต้องแก้ตอนทำงานบทเรียน | U11, U15 · บทเรียน |
+| G4 | **ภาพพื้นหลัง/ธีม 6 level** (asset) ตามคอนเซปต์ใน `modules/quiz/curriculum-source.md` | QuizLevelsV1 การ์ด, QuizMapV1 พื้นหลัง | ไม่มี · มีแค่ภาพ ref ธีม ป.1 ใน sketchbook | U15 · บทเรียน |
+| G5 | **ช่องกรอก (input) + หน้า login + ทางเข้าโหมด guest** | app-shell login | `JobName` (ช่องแก้ชื่อ inline) · `Card` · `Button` · `Cover` · ช่องกรอก = DSG-04 ค้างอยู่ | U1 · Studio |
+| G6 | **แถบความคืบหน้า + หน้าอัปเดตซอฟต์แวร์** (มีอัปเดต / กำลังดาวน์โหลด / ติดตั้ง / ล้มเหลว / เป็นล่าสุดแล้ว) | update-software (module ใหม่) | `sb-notice` · `Button` · spinner (ค่าชั่วคราวข้อ 6) · แถบความคืบหน้าไม่มี | U2 · Update Software |
+| G7 | **การ์ดเกมแบบ thumbnail + ตัวกรองหมวด/ค้นหา** (คล้าย Y8) | games (module ใหม่) | `Card` · `Tab` · ช่องค้นหาไม่มี (G5) · **รอ req เกมก่อน** | U3 · เกม |
+| G8 | **dialog บันทึกเป็น (save as) บน cloud** + เมนู export | my-work, Arm Lab, Block Lab | `Dialog` · `Button` · ช่องกรอกไม่มี (G5) | U9 · Arm/Block Lab |
+
+**ไม่ใช่ gap (มีใน DS แล้ว):** โลโก้ Arm Lab / Block Lab สำหรับหัวงานของฉัน (U7 · `project/assets/Logos`) · sidebar ไม่มีโลโก้ (U6 · `Sidebar`) · ซ่อนความสำเร็จ (U8 · เอาออกเฉย ๆ) · ยังค้างเดิม: ไฟล์โลโก้ School Bot ที่ใช้ได้ (หัวข้อ "ยังรอ")
+
+### DS gap จาก ruler ตรวจ quiz (2026-11-05 · session หลักตรวจกับ DS v14 แล้ว)
+- **การ์ด Level สถานะล็อก:** ไม่ใช่ gap · DS `Card` มี state "ปิดใช้" (`aria-disabled` พื้น `off-bg` ขอบ `border` ตัว `text-secondary` ไม่นูน + popup เหตุผล) · ป้าย "ชั้นของฉัน" ตัดออกแล้ว (OQ41) จึงไม่ต้องใช้ชิปมีกรอบ
+- **G9 · select/dropdown เลือก access ต่อระดับชั้น (ป.1–6 × Level 1–6) บนเว็บครู:** DS gap · ใช้ที่ teacher-web (ยังไม่มี R#) · ใกล้เคียงที่สุด: `Tab` (segmented), `Dialog` · ตาราง = DSG-07 เดิม · คิว: เมื่อเพิ่ม req teacher-web
