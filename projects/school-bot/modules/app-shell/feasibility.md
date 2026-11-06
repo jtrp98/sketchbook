@@ -1,11 +1,14 @@
 ---
 module: app-shell
-updated: 2026-10-21
+updated: 2026-11-06
 ---
 
 # App Shell: Feasibility (จาก role 2)
 
-**ผล: ยังไม่ได้ทำโดย role 2 (ruler)**
+**ผล: ทำได้มีเงื่อนไข** (2026-11-06) · **ขอบเขต: ruler ตรวจเฉพาะ R7 (sidebar 5 เมนู + "เกม" · OQ19)** → รายละเอียด `feasibility/R7.md` หัวข้อ "R7: sidebar 5 เมนู" · R# อื่นยังไม่ได้ตรวจโดย ruler (ใช้ข้อมูลอ้างอิงจาก Architect เดิมด้านล่าง) · OQ ที่เปิดรอบนี้: OQ20, OQ21, OQ23 (block ออกแบบหน้าหลัก/sidebar), OQ22, OQ24 (ไม่ block)
+
+## R7: sidebar 5 เมนู (สรุป · 2026-11-06)
+ทำได้มีเงื่อนไข · เงื่อนไข: ปลายทางเมนูเกมรอ module เกม (handoff sidebar รอ R# ปลายทาง) · เพิ่มหน้าคลังเกมในรายการ N3/highlight (brand §11.2/§11.21) · leave guard ของหน้าเกมที่มีงาน/สั่งหุ่น · แก้ข้อความค้างใน requirements (AC-04 "4 เมนู", 104/264) และ context.md · ไอคอน "เกม" ต้องยืนยันว่ามีใน DS (ถ้าไม่มี = DS gap) · ดู `feasibility/R7.md`
 
 ข้อมูลด้านล่างเป็น**ข้อมูลอ้างอิงจาก Architect ของระบบเก่า** (ผลตัดสินรวมของโปรเจกต์ = GO WITH CONDITIONS · ไม่ใช่ผลของ `ruler`) นำเข้า 2026-10-21 จาก `02_FEASIBILITY` v3 + `SCREEN_INVENTORY` v4 + `DATA_MAP` v3 + `DEV_QUESTIONS` v3 · ถ้าจะส่ง `ruler` ให้ชี้ไฟล์ในโฟลเดอร์ `feasibility/` เป็นข้อมูลประกอบ · ประเด็นที่ไม่ผูก module นี้โดยตรงอยู่ใน module เจ้าของ
 
