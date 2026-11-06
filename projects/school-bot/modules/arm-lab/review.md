@@ -1,13 +1,79 @@
 ---
 module: arm-lab
-updated: 2026-11-04
+updated: 2026-11-06
 ---
 
 # Arm Lab: Review (จาก role 4)
 
 รอบใหม่ไว้บนสุด หัวข้อ `## รอบ YYYY-MM-DD` แต่ละข้ออ้าง D#/R# + ความรุนแรง + role ที่ควรแก้
 
-**ผล highlighter: รอบ 2026-11-04 ตรวจ D1 (มือคีบ %) เท่านั้น** · ส่วนอื่นของ Arm Lab ยังไม่ได้ตรวจ · รอบ 2026-10-21 ด้านล่างคือผลของ Auditor ระบบเก่าที่นำเข้ามา เพื่อไม่ให้ข้อค้นพบหาย
+**ผล highlighter: รอบ 2026-11-06 ตรวจ D4 (หุ่นหลุด/ต่อกลับ · C2 v18) · รอบ 2026-11-04 ตรวจ D1 (มือคีบ %)** · ส่วนอื่นของ Arm Lab ยังไม่ได้ตรวจ · รอบ 2026-10-21 ด้านล่างคือผลของ Auditor ระบบเก่าที่นำเข้ามา เพื่อไม่ให้ข้อค้นพบหาย
+
+## รอบ 2026-11-06 (highlighter · D4 หุ่นหลุด/ต่อกลับ · R5/R11/R14/R16/R17)
+
+ขอบเขต: D4 บน C2 (`read` ได้ · version `1793948754-ebdd` = v18 ตรงกับ D4/INDEX) · อ่านครบ 16 ไฟล์ artboard + `ArmShell.dc.html` + `canvas.json` · ไม่แตะ C1 · DS School Bot Studio v20 (`1793947832-f9f5` ตรงกับ record `designSystems` บน C2 · `bundle.css` บน C2 ขนาดเท่ากับของ DS) อ่าน `tokens.json`/`tokens.css`/`bundle.css` + README ของ Banner, Button, Dialog, Focus, Tooltip, DeviceStatus · เทียบ requirements.md ฉบับ 2026-11-06, OQ79–OQ95, design-taste ข้อ 17/19, brand.md · สถานะ module ข้ามขั้น `designed` ตามที่ผู้ใช้สั่ง (บันทึกใน INDEX แล้ว) · **ไม่ได้ render / ไม่ได้ลองกดจริง / ไม่ได้ทดสอบ screen reader** ตำแหน่งแถบ/tooltip คำนวณจาก CSS (ความสูงแถบประมาณ 78 px แบบสายหลุด, 100 px แบบแขนอ่อน) · ไม่มี `wcag-aa.md` ของทีม → ใช้ WCAG 2.2 AA ("ยังไม่มีเกณฑ์ของทีม") · โปรเจกต์มี DS จึงไม่ใช้ `design-tokens.md`/`components.md` · **ข้อยกเว้นที่ผู้ใช้อนุมัติ (OQ95): ปุ่มใต้แถบเหลืองถูกบังตอน focus (WCAG 2.4.11) ไม่นับเป็นข้อพบ**
+
+**ผลรวม: ไม่ผ่าน · สูง 1 · กลาง 11 · ต่ำ 10** · module คงสถานะ `approved` (ยังไม่ `designed` · highlighter ไม่เปลี่ยนสถานะ) · DS gap 1 ข้อ (F7 · tooltip ชิดขอบ + spinner 16 ใน F8) + DS ขัดกัน 3 ข้อ (F4, F5, F6) → เปิด OQ96–OQ101 `open` (agent ไม่มี AskUserQuestion → session หลักถาม)
+
+### ผ่าน (ตรวจแล้ว)
+
+| ข้อกำหนด | ผล | หลักฐานบน C2 |
+|---|---|---|
+| ฉากหลัง dialog lab คลุมทุกอย่างเว้น nav (design-taste 19 · R5/R16) | ผ่าน (เมาส์) | `sb-scrim-lab` top = `header-height` · `z-backdrop` 20 เหนือ body/แถบเหลือง (`z-sticky` 10) · ปุ่มหยุดที่มุม `is-covered` (`z-base`) + `inert` ทุก artboard ที่มี dialog |
+| สายหลุด: modal ไม่มีปุ่มหยุด · หุ่นไม่ตอบ: ปุ่มหยุดแดงบนสุดใต้หัว เต็มกว้าง focus เริ่มที่ปุ่มนี้ | ผ่าน | Main / ModalNoReply (`sb-btn-stop is-focus` ก่อน `sb-dialog-body`) |
+| พาไปท่าพัก: ปุ่มหยุดในตัว คงไว้หลังหยุด/ไม่สำเร็จจน dialog ปิด (OQ88) · ไม่มี "ข้าม" ระหว่างไป | ผ่าน | BackGoing/BackStopped/BackFailed (`stopCls` ทุก step) |
+| ห้ามเขียน "หยุดแล้ว"/"ถึงแล้ว" โดยไม่มี ack | ผ่าน | ไม่มี ack = "ส่งคำสั่งหยุดแล้ว" + "ดูว่าหุ่นหยุดหรือยัง" · ไม่สำเร็จ = "หุ่นไม่ตอบว่าถึงท่าพักแล้ว" |
+| หลังปิดไว้ก่อน (สายหลุด): ปุ่มหยุด `aria-disabled` โฟกัสได้ + tooltip เหตุผล (OQ89/OQ93-7) + กดแล้ว "เชื่อมหุ่น" `is-shake` · อยู่มุมซ้ายล่าง ไม่ถูกแถบบัง | ผ่าน | BannerLost/BannerStopPressed · `onStop` |
+| หุ่นไม่ตอบหลังปิด: ปุ่มหยุดที่มุมกดได้ | ผ่าน | BannerNoReply `stop-mode="on"` |
+| แถบเหลือง: ถ้อยคำ 2 แบบ · บรรทัดหยุดทางกายภาพ · บรรทัดแขนอ่อน · ไม่มีปุ่มปิด/animation · `role="status"` | ผ่าน | ArmShell `bannerCable`/`bannerNoReply`/`bannerArm` |
+| control ใน body ขณะแถบแสดง: `aria-disabled` + tooltip + `aria-describedby` ยัง Tab ได้ ไม่ใช้ `inert` (OQ95) · ปลดล็อกข้อต่อปิดในแบบแขนอ่อน (R14/OQ87) | ผ่าน | ArmShell `bodyOff`/`cmdOff`/`unlockOff` |
+| ไม่มี Esc บน modal R16 (OQ81) · ปุ่มถอยใช้ชื่อเดิมทุก modal (H4) · ไม่มี ID = "พบหุ่นที่ COM7" ไม่อ้างชื่อเดิม (OQ76) | ผ่าน | ไม่มี handler Esc · ModalFoundPort |
+| ชิป N1: ขาดหาย = `warn` (`warning-strong` + `text-primary`) + "เชื่อมหุ่น" Attention Ring ส้ม `sb-ring-inset` · กำลังเชื่อมต่อ = spinner 16 + ปุ่ม `aria-disabled` ไม่มีวง (OQ93/OQ94) | ผ่าน | NavChips/ArmShell |
+| contrast (คำนวณจากค่าใน DS) | ผ่าน | `text-primary`/`warning-bg` ≈ 14:1 · ไอคอน `warning-strong`/`warning-bg` 3.24:1 (กราฟิก ≥ 3) · ขาว/`stop` 4.98 · `text-primary`/`action-robot` 6.59 · `text-secondary`/`off-bg` 5.56 · `action-primary`/ขาว 5.55 (ชิป busy 14/600) · tooltip ขาว/`text-primary` 15.6 |
+| เป้ากด | ผ่าน | `sb-btn-sm`/`sb-ibtn` 44 · ปุ่ม dialog 48 · ปุ่มหยุด 56 · `sb-check` ≥ 44 · `sb-wb` 48x44 |
+| reduced-motion | ผ่านบางส่วน | Attention Ring นิ่ง .5 · spinner นิ่ง · tooltip ไม่มี transition · แถบไม่มี animation · **ดู F6** |
+
+### ข้อพบ
+
+| ข้อ | ระดับ | อ้าง | ตำแหน่ง (artboard · องค์ประกอบ) | สิ่งที่พบ | role ที่ควรแก้ |
+|---|---|---|---|---|---|
+| F1 | **สูง** | R5 (ปุ่มหยุดเห็นได้ตลอด · OQ88 ก), R16 (2), R15 เล่นจากบอร์ด · H3, H5 | BackAsk, BackAskArmWeak (+ ต่อจาก ModalFoundPort → เชื่อมต่อ) · ปุ่มหยุดที่มุม `is-covered`+`inert` และไม่มี `sb-btn-stop` ใน dialog | modal "ต่อหุ่นกลับแล้ว" เปิดตอน**หุ่นเชื่อมอยู่**แต่ไม่มีทางกดหยุดเลย (ที่มุมถูกคลุม · ใน dialog ไม่มี) ทั้งที่ modal ก่อนหน้า (Main/ModalNoReply/ModalFoundPort) บอกว่า "หุ่นอาจยังทำงานอยู่" จนวินาทีที่ต่อกลับ และ R15 "เล่นจากบอร์ด" เล่นต่อได้โดยไม่ผ่านแอป · D4 ทำตามกติกา "dialog ตอนหุ่นนิ่งไม่มีปุ่มหยุด" แต่ไม่มี state "ต่อกลับแล้ว + หุ่นกำลังขยับ" (OQ88 ก: ปุ่มหยุดโผล่ทันทีที่หุ่นขยับ) และไม่ได้กำหนดว่าตอนต่อกลับซึ่ง**ไม่รู้ว่าหุ่นขยับอยู่หรือไม่** (OQ11/OQ14) ให้ถือเป็นนิ่งหรือขยับ → เด็กเห็นหุ่นขยับแต่กดหยุดไม่ได้ ต้องถอดสายไฟ ซึ่ง modal นี้ก็ไม่บอกแล้ว | session หลัก: ถามผู้ใช้ **OQ96** · crayon: เพิ่ม state BackAsk(+ArmWeak) ที่มีปุ่มหยุดในตัวตามคำตอบ |
+| F2 | กลาง | R16 (2) "เชื่อมเองไม่สำเร็จ", R5/OQ88 ค · ข้อ 4 ของงาน (ครบ state) | ไม่มี artboard | ขาด 2 state ที่ requirement ระบุ: (ก) **เชื่อมเองไม่สำเร็จ**: ชิปกลับ "ขาดหาย" + modal บอกให้ถอดเสียบใหม่/ไปหน้าเชื่อมต่อ (BackFailed เป็นคนละกรณี = ไปท่าพักไม่สำเร็จ) (ข) **หุ่นไม่ตอบ → พอร์ตหายใน modal เดียวกัน**: ปุ่มหยุดใน dialog คงไว้แบบ `aria-disabled` (R5/OQ88) ซึ่งต่างจาก Main ที่ไม่มีปุ่มหยุด · D4 ต้องระบุว่าใช้แบบใด | crayon |
+| F3 | กลาง | R5, R16 (หุ่นไม่ตอบ) · H1 · UI22 | ModalNoReply, BannerNoReply · `sb-btn-stop` | กดปุ่มหยุด (ส่งแบบพยายาม) แล้วไม่มี state ผลตอบกลับ: ไม่รู้ว่ากดติดหรือไม่ · BackStopped มีถ้อยคำ "ส่งคำสั่งหยุดแล้ว · ดูว่าหุ่นหยุดหรือยัง" อยู่แล้ว แต่ไม่ได้ใช้กับกรณีหุ่นไม่ตอบ (ทั้งใน modal และปุ่มที่มุมหลังปิด) | crayon (ใช้ถ้อยคำ/`role="status"` เดิมของ BackStopped · ถ้าต้องถ้อยคำใหม่ถามผู้ใช้) |
+| F4 | กลาง | R16 (nav กดได้ขณะ modal · OQ82), R17 (ไม่มี Esc) · WCAG 2.1.1, 2.4.3, 4.1.2 · **DS ขัดกัน** | ทุก artboard ที่มี dialog · `role="alertdialog" aria-modal="true"` | Dialog README ของ DS สั่ง `aria-modal` + focus trap + Esc ปิด + คืนโฟกัสที่ปุ่มเปิด แต่ส่วน "หน้า lab" ของ README เดียวกันให้แถบ nav กดได้ขณะ dialog เปิด · ถ้าทำตามคำแรก ผู้ใช้คีย์บอร์ด/ผู้อ่านจอจะไปถึง nav ไม่ได้ (aria-modal ซ่อน nav) · modal R16 ขึ้นเอง ไม่มี "ปุ่มเปิด" ให้คืนโฟกัส → D4 ไม่ระบุว่าหลังปิดไว้ก่อน/ข้าม/รับทราบ/ปิดเองเมื่อถึงท่าพัก โฟกัสไปที่ใด · ใน artboard body ใต้ฉากหลังยังโฟกัสได้ (มีแค่ปุ่มหยุดที่ `inert`) · Esc ใน README ขัดกับ R16 (ข้อยกเว้นของ requirement ไม่ได้บันทึกใน DS) | session หลัก: ถามผู้ใช้ **OQ97** แล้วแก้ DS Dialog README · crayon ระบุใน D4 |
+| F5 | กลาง | R16 แถบเหลือง, R14 (แขนอ่อน) · brand D-12 · R10 (ป.1) · **DS ขัดกัน** | BannerLost/BannerNoReply/BannerArmWeak · `sb-banner-body` | Banner README ให้บรรทัดรอง `text-sm` 14/500 แต่ `tokens.json` กำหนด `text-sm` = "ข้อมูลรองเท่านั้น" และ `text-md` 16 = "ขั้นต่ำของ ... คำเตือน" · บรรทัดที่เป็นคำเตือนความปลอดภัย (ถอดสายไฟ adapter · "แขนยังอ่อนอยู่ ประคองแขนไว้แล้วเรียกครู") จึงเล็กกว่าเกณฑ์ของ DS เอง · บรรทัดแขนอ่อนใช้ `<b>` ใน `sb-banner-body` (14/700 ไม่มีใน DS) และเล็กกว่าหัว "การเชื่อมต่อหลุด" ทั้งที่เร่งด่วนกว่า | session หลัก: ถามผู้ใช้ **OQ98** แล้วแก้ DS |
+| F6 | กลาง | R11 (ลดการเคลื่อนไหว = Attention Ring นิ่ง · OQ78), OQ93-3 · H1 · UI22 · **DS ขัดกัน** | ArmShell · ปุ่ม "เชื่อมหุ่น" `sb-ring sb-ring-inset` + `is-shake` | ตอนลดการเคลื่อนไหว `bundle.css` ให้ `.sb-ring.sb-ring-inset` = วงด้านใน 3px .5 นิ่ง และ `.sb-btn.is-shake` = วงด้านใน 3px .5 **ค่าเดียวกัน** → เมื่อวงแสดงตลอดอยู่แล้ว (OQ93-3) การกดปุ่มที่ปิดไม่มีผลที่เห็นบนปุ่ม "เชื่อมหุ่น" เลย (OQ78 ตัดสินก่อนมีวงตลอด) · เหลือแต่ tooltip ของปุ่มที่กด | session หลัก: ถามผู้ใช้ **OQ99** แล้วแก้ DS |
+| F7 | กลาง | ค่านอก DS · **DS gap** · Tooltip README (ตำแหน่ง) | ArmShell · คลาส `.d4-tip-r` (`left:auto;right:0;transform:none`) ที่ กลับท่าพัก, ไปท่านี้, เล่น, ปลดล็อกข้อต่อ, เมนูท่า, เพิ่มท่า, การ์ดท่า 2–3 · inline `left:0;transform:none` ที่ปุ่มหยุดและการ์ดท่า 0–1 | DS มีตำแหน่ง tooltip 3 แบบ (ใต้, `sb-tip-top`, `sb-tip-left` สำหรับปุ่มติดขอบขวา) ไม่มีแบบชิดขอบซ้าย/ขวาของปุ่ม · D4 สร้างเองและเขียนว่า "ไม่มี DS gap" · `DS gap: tooltip จัดชิดขอบปุ่ม (start/end) เพื่อไม่ล้นแผง · ใช้ที่ ArmShell ปุ่มในแผง/การ์ด/ปุ่มหยุด · ใกล้เคียงที่สุดใน DS: sb-tip-left / sb-tip-top` | session หลัก: ถามผู้ใช้ **OQ100** แล้วเติม DS · crayon แก้ D4 (ส่วน DS gap) |
+| F8 | กลาง | ค่านอก DS (CLAUDE.md "ตัวเลขลอย") | ArmShell: `width:560px`, `left:608px`, กรอบแขน `360x340`, `min-width:200px`, `width:96px`, `width:64px`, spinner ในชิป `width/height:16px` (มี `icon-sm` แต่ไม่อ้าง · DS ไม่มีคลาส spinner 16) · ตัวอักษร inline 20/700, 12/600 (`text-xs` = 400), 14/600 ใน slider (`text-sm` "ห้ามใช้กับสิ่งที่กด") · NavChips `height:60px` (มี `header-height`) | ตัวเลขที่ไม่อ้าง token หรือคู่ขนาด/น้ำหนักที่ไม่มีใน type scale · ส่วนใหญ่เป็นโครงย่อของ MainV6A (ไม่ใช่ frame จริง) แต่ D4 ไม่ได้ระบุว่าเป็น placeholder ที่ต้องแทนด้วยค่าของ MainV6A | crayon (อ้าง token หรือระบุใน D4 ว่าค่าโครงมาจาก MainV6A) · spinner 16 = DS gap เล็ก (helper `DeviceStatus` บอกขนาดแต่ไม่มีคลาส) รวมถามใน OQ100 |
+| F9 | กลาง | Button README "ห้าม disabled เงียบ · aria-disabled + popup/tooltip" · OQ93-4 | NavChips/ArmShell `chip="busy"` · ปุ่ม "เชื่อมหุ่น" | เหตุผล "กำลังเชื่อมต่อ รอให้เสร็จก่อน" มีแค่ `sb-sr` (ผู้อ่านจอ) ไม่มี `sb-tip` ที่ตามองเห็น ต่างจากปุ่มปิดตัวอื่นใน D4 | crayon |
+| F10 | กลาง | R16 (2) "checkbox ดูรอบหุ่นแล้ว (ข้อความเก็บนิ้ว)", R15 OQ24 (ข้อความถาวรเก็บนิ้วออกจากมือคีบ), OQ67 | BackAsk · `sb-check` "ดูรอบหุ่นแล้ว ไม่มีของหรือมือใกล้แขน" | checkbox นี้นับเป็นติ๊กของ R15 แทน popup ขยับครั้งแรก (popup จะไม่ขึ้นอีกหลังติ๊ก) แต่ไม่มีคำว่า "นิ้ว/มือคีบ" → หลังต่อกลับเด็กไม่เห็นคำเตือนมือคีบเลยจนเชื่อมใหม่ · ถ้อยคำผ่าน OQ93-9 แล้ว แต่ไม่ตรงกับ R16/R15 ตามตัวอักษร | session หลัก: ถามผู้ใช้ **OQ101** · crayon แก้ถ้อยคำตามคำตอบ |
+| F11 | กลาง | R11 vs R16 (OQ74 vs OQ93) | requirements.md | R11 "ยังไม่เชื่อม/หลุด ... เลือก/ดู/เพิ่ม/คัดลอก/ลบ/เรียงท่า/แก้เวลา/บันทึก/ส่งออก/เมนู ใช้ได้" ขัดกับ R16 "ขณะแถบแสดงไม่มี control ใน body ที่กดได้" (D4 ทำตาม R16 · ปิดการ์ด/เพิ่มท่า/‹ › ด้วย) · R16 กติกาแถบ "หุ่นไม่ตอบ" ไม่ได้บอกว่าปุ่มหยุดเป็นข้อยกเว้นของ "ไม่มี control ใน body ที่กดได้" (D4 ตีความว่ายกเว้น) | session หลัก: เกลา R11/R16 (ไม่เปลี่ยนความหมาย → ไม่ต้องถาม ถ้าตีความตาม OQ93) |
+| F12 | กลาง | R5/OQ88 ง (dropdown nav ห้ามทับปุ่มหยุด · คลิกแรกที่ปุ่มหยุดหยุดทันที) · OQ82 | ทุก dialog ที่มีปุ่มหยุด (ModalNoReply, BackGoing) + BannerNoReply | D4 ไม่มี state/ข้อกำหนดเมนู ☰ หรือ popover (i) เปิดซ้อนขณะ dialog มีปุ่มหยุด · จากการคำนวณ เมนู ☰ (x ~80–360) ไม่ทับ dialog (x 460–980) แต่ไม่ได้ยืนยัน และไม่ได้เขียนกติกา "คลิกแรกที่ปุ่มหยุดขณะเมนูเปิด = หยุด ไม่ใช่แค่ปิดเมนู" ไว้ให้ dev | crayon (ระบุใน D4 + artboard เมนูเปิดซ้อน) |
+| F13 | ต่ำ | R16 แถบ · WCAG 1.4.13 | BannerArmWeak · tooltip `.d4-tip-r` ของ กลับท่าพัก/ไปท่านี้ (`z-popover` เหนือแถบ) | ปุ่มอยู่ใต้แถบทั้งปุ่ม tooltip ขึ้นใต้ปุ่ม (y ≈ 136–166) ทับบรรทัด "ถอดสายไฟ adapter" ของแถบแบบแขนอ่อน (y ≈ 122–144) ขณะโฟกัส · tooltip ของ DS ปิดด้วย Esc ไม่ได้ | crayon (ใช้ `sb-tip-left`/ตำแหน่งอื่นสำหรับปุ่มใต้แถบ) · DS Tooltip (Esc) |
+| F14 | ต่ำ | WCAG 4.1.3 | ArmShell · แถบ `role="status"` ใน `sc-if` | live region ถูกสร้างพร้อมข้อความ ผู้อ่านจอบางตัวไม่ประกาศ · handoff ต้องระบุให้ container มีอยู่ก่อนแล้วเติมข้อความ | crayon/handoff |
+| F15 | ต่ำ | WCAG 4.1.2 · WIG "semantic HTML ก่อน ARIA" | ArmShell · slider `div role="slider"` | ไม่มี `aria-valuenow/min/max` (บังคับสำหรับ slider) · D4 ข้อเสนอแนะ 2 ระบุแล้วว่าของจริงเป็น `input type=range` | crayon (ตอนยกเข้า MainV6A) |
+| F16 | ต่ำ | WIG Typography "…" | ชิป busy "กำลังเชื่อมต่อ..." · `sb-loading` "กำลังรอหุ่นกลุ่ม 3 (COM7)", "กำลังพาหุ่นไปท่าพัก" | ใช้ "..." / ไม่มี "…" ท้ายสถานะกำลังโหลด · R11 เขียน "..." เอง (ขัดกับกฎ WIG · brand §7 ไม่ระบุ) | session หลัก/crayon |
+| F17 | ต่ำ | WCAG 2.2.2 · WIG Animation (loop > 5 วิ ต้องหยุดได้, animate transform/opacity) | ปุ่ม "เชื่อมหุ่น" `sb-ring` | วงกะพริบวนไม่จบตลอดที่หลุด (อาจทั้งคาบ) หยุดได้เฉพาะตั้งค่าลดการเคลื่อนไหวของระบบ · animate `box-shadow` | DS (session หลัก) |
+| F18 | ต่ำ | Dialog README (กล่องไอคอน "เตือน") · H8 | ModalFoundPort · ไอคอน `plug` ในกล่อง `warn` · ปุ่ม 3 ตัวใน 520 | ใช้กล่องสีเตือนกับข่าวกลาง ๆ "พบหุ่น" · ปุ่ม 3 ตัวกว้างรวม ≈ 446/472 px `nowrap` ล้นได้เมื่อแปลภาษา +40% (ยังไม่ render) | crayon |
+| F19 | ต่ำ | เอกสาร | D4 ตาราง artboard แถว 4 และ `canvas.json` BannerStopPressed เขียน "เหตุผลใต้ปุ่ม" แต่ canvas/ข้อตัดสิน 7 = tooltip `sb-tip-top` เหนือปุ่ม · D4 หัวข้อ DS gap "ไม่มี DS gap" (ดู F7) | ข้อความไม่ตรงกับ canvas | crayon |
+| F20 | ต่ำ | เอกสาร (CLAUDE.md "ทุกไฟล์ใน design/ มีแถว · canvas: C# มีในตาราง Canvas") | INDEX.md ตาราง Design แถว D3 | D3 ไม่มี C# (Artifact แยก ไม่ลงทะเบียน) และแถวมี 6 ช่องจาก 7 (ช่อง Artboard/Publish/อัปเดต เลื่อน) · D4 ข้อเสนอแนะ 4 ให้ย้าย D3 ไป archive | session หลัก (ลงทะเบียน C# หรือย้าย D3 ไป archive) |
+| F21 | ต่ำ | R16/OQ92 ค (หน้าเชื่อมต่อแสดงแถบเดียวกัน) · R5/R11 (กดปุ่มที่ปิดทุกตัว → "เชื่อมหุ่น" สั่น) | ไม่มี artboard · ArmShell ต่อ `onClick` เฉพาะปุ่มหยุด | แถบบนหน้าเชื่อมต่อไม่อยู่ใน D4 (ConnectV3 อยู่ C1 · D2) · ต้นแบบกดได้จริงสั่นเฉพาะตอนกดปุ่มหยุด ปุ่มปิดตัวอื่นไม่สั่น (D4 ไม่ได้อ้างว่าทำ) | crayon (D2 รอบถัดไป · ระบุใน D4 ว่าทุกปุ่มที่ปิดสั่นเหมือนกัน) |
+| F22 | ต่ำ | WIG Images | ArmShell · โลโก้ `<img>` | ไม่มี `width`/`height` (CSS ให้สูง 32) | crayon |
+
+### Web Interface Guidelines (ส่วนเสริม · ตรวจเฉพาะ artboard ที่ read)
+- ข้อพบ: F13 (overlay ทับ), F14 (aria-live), F15 (ARIA ก่อน semantic), F16 (…), F17 (loop > 5 วิ), F22 (img) · overlay บัง focus ของปุ่มใต้แถบ = ข้อยกเว้น OQ95 ไม่นับ
+- ผ่าน: ปุ่มไอคอนมี `aria-label` · ไอคอนตกแต่ง `aria-hidden` · `<button>` ทุก action · checkbox มี label ครอบ (hit target เดียว) · focus ใช้ `:focus-visible` · reduced-motion มี · animation สั่นใช้ transform · ไม่มี `outline:none` ที่ไม่มีตัวแทน
+- ไม่เกี่ยวข้อง: Hydration, Performance, Intl/locale, Title Case/Chicago (ข้อความไทย), safe area, dark mode, URL state
+
+### H / HIG / UD (สรุป)
+- H1 ไม่ผ่าน (F3, F6 · กลาง) · H3 ไม่ผ่าน (F1 · สูง: ทางออกจากหุ่นที่ขยับไม่มี) · H4 ผ่าน (ชื่อปุ่ม/รูปทรงหยุดเดียวกัน) · H5 ไม่ผ่าน (F1, F10) · H6 ผ่าน (วิธีหยุดทางกายภาพบนจอ modal → แถบ) · H8 ผ่านบางส่วน (F5, F18 · ต่ำ/กลาง) · H9 ผ่าน (บอกวิธีแก้ทุก state ที่มี) · H2, H7, H10 ไม่เกี่ยวข้อง
+- HM/HF: ไม่เปลี่ยน WindowBar ของ DS (ไม่ตรวจซ้ำ) · UD1 ผ่าน (ปุ่มปิดยังโฟกัสได้ + เหตุผล) · UD3 ผ่านบางส่วน (F5) · UD4 ผ่าน (ไอคอนคู่ข้อความ ไม่ใช้สีอย่างเดียว) · UD5 ไม่ผ่าน (F1) · UI22 ไม่ผ่าน (F3, F6)
+
+### ส่งต่อ
+- **ก่อน `designed`:** F1 (OQ96) · F2 · F3 · F4 (OQ97) · F7 (OQ100) · F10 (OQ101) · F12
+- DS (session หลักหลังผู้ใช้ตอบ): F4 Dialog README · F5 Banner (OQ98) · F6 reduced-motion (OQ99) · F7 tooltip/spinner (OQ100) · F17 · agent ไม่แก้ DS
+- requirements (session หลัก): F11 · F16
+- สถานะ: มีข้อ "สูง" ค้าง และ module ยังไม่ `designed` → คง `approved`
 
 ## รอบ 2026-11-04 (highlighter · D1 มือคีบ S5 เป็น % · R13/R15)
 
