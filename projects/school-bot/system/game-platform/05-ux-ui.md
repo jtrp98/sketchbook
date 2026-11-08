@@ -6,6 +6,8 @@ status: Proposed (โครง · ยังไม่ใช่ D#) · ค่า�
 
 # 8. UX/UI Architecture
 
+> **2026-11-09:** ไฟล์นี้เป็นรายละเอียดเชิงลึกของ UI (components, layout L1–L7, DS gap) · ชุดหลัก `pattern-rule.md` ชนะเมื่อขัดกัน · §8.3 C โหมด "สร้างด่าน/อิสระ" ถูกแทน (Future · game R12) · ภาษากลาง 4 โซนจากเอกสาร 8 pattern ดู PR-A12 และ PQ13
+
 กรอบ: หน้าต่าง 1440×900 (แถบหน้าต่าง 60 + พื้นที่ 840 · context.md) · UI เดียว ป.1–6 (DEC-06) · WCAG 2.2 AA + เกณฑ์เด็ก · ไอคอนคู่ข้อความ
 
 ## 8.1 Shared UI Components (ทุกเกม/ด่านใช้ชุดเดียว = Consistent Interaction Language)

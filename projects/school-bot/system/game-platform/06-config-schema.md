@@ -6,6 +6,8 @@ status: Proposed (schema v0.1 · ให้ dev ทบทวนก่อนใช
 
 # 9. Configuration Schema
 
+> **2026-11-09:** ไฟล์นี้เป็นรายละเอียด config/predicate ที่ยังใช้ได้ · ชุดหลักชนะเมื่อขัดกัน · ถูกแทน: `levels[]` หลายระดับ (เกมมีระดับเดียว · game R4) · `resume: true` ในกรณีที่ 3 (ไม่มี resume · PR-A28) · `star_rule`/ดาวของ lesson ให้ตาม quiz R4 และ PR-Q7
+
 ## 9.1 สามชั้นของ config
 
 | ชั้น | อยู่ที่ | ใครเขียน | ตัวอย่าง field |

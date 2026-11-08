@@ -7,6 +7,8 @@ source: ../../modules/quiz/curriculum-source.md (S1–S4 · อ่าน 2026-11
 
 # 6. Curriculum Integration · 7. Progression Roadmap
 
+> **2026-11-09:** ไฟล์นี้เป็นฐานของ `quiz.md` §3 (หัวข้อหลักสูตร → pattern ต่อ Level) · ชุดหลักชนะเมื่อขัดกัน · ช่อง "Pattern เดิม = รอเอกสาร" ตอบแล้วบางส่วน (ได้เอกสาร 8 pattern · ยังไม่ได้เอกสาร ป.1 44 คาบ และ Roadmap ป.2–6)
+
 **กฎ (CLAUDE.md 2026-11-05):** อิงแหล่งใน curriculum-source.md เท่านั้น ไม่แต่งชื่อบท/โจทย์ · ข้อมูลที่ไม่มี = เขียน "รอข้อมูล"
 
 ## 6.1 สถานะข้อมูล ป.1

@@ -6,6 +6,8 @@ status: Proposed
 
 # 3. Core Game Engine Architecture · 4. Gameplay Mechanics Specification
 
+> **2026-11-09:** ไฟล์นี้เป็นรายละเอียดเชิงลึก (ฐาน engine ของ GP) · ชุดหลัก `pattern.md` / `pattern-rule.md` ชนะเมื่อขัดกัน · §3.3 (mapping กับ 8 patterns) ได้เอกสารมาแล้ว ดู `pattern.md` §3
+
 ## 3.1 Architecture Diagram
 
 ```
