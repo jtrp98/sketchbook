@@ -1,12 +1,12 @@
 ---
 project: school-bot
-updated: 2026-11-06
+updated: 2026-11-09
 scope: สรุปการเติมเนื้อหา Design System artifact (รอบที่ 3 · ไม่ใช่งานของ module · ไม่มี D#)
 ---
 
 # DS build: School Bot Studio
 
-DS: https://claude.ai/artifact/DgwzCEnxThrSoxnE5ZrNoy · version ที่ publish ล่าสุด **22** (id `1793950635-f9ca` · 2026-11-06 Skeleton, FilterChip, Card มีภาพ, ไอคอน 4 ตัว · v20–21 เป็นของ session arm-lab) · อ่านอย่างเดียว ไม่ได้ render หรือทดสอบคีย์บอร์ด/ผู้อ่านจอ (คอนทราสต์คำนวณมือ) · **ยังไม่ยืนยันว่า preview เป็น live แล้ว (ต้องให้ผู้ใช้เปิดดู)**
+DS: https://claude.ai/artifact/DgwzCEnxThrSoxnE5ZrNoy · version ที่ publish ล่าสุด **24** (id `1794197914-a9c2` · 2026-11-09 AttemptDots, GameHud, ไอคอน lightbulb/volume-2/volume-x · ก่อนหน้า v22 `1793950635-f9ca` 2026-11-06 Skeleton, FilterChip, Card มีภาพ · v23 `1794157878-1fe9` และ v20–21 เป็นของ session อื่น) · อ่านอย่างเดียว ไม่ได้ render หรือทดสอบคีย์บอร์ด/ผู้อ่านจอ (คอนทราสต์คำนวณมือ) · **ยังไม่ยืนยันว่า preview เป็น live แล้ว (ต้องให้ผู้ใช้เปิดดู)**
 
 ## ทำแล้ว
 
@@ -14,6 +14,14 @@ DS: https://claude.ai/artifact/DgwzCEnxThrSoxnE5ZrNoy · version ที่ publi
 - `README.md` brand book ภาษาไทย · `components/bundle.css` (คลาส `sb-*`), `bundle.js` (ไอคอน Lucide ~35 + hydrate + ตัวช่วย Button / DeviceStatus / Dialog), `index.d.ts`
 - components (README + preview): WindowBar, Sidebar, Button, DeviceStatus, JobName, Tab, Card, Tooltip, Popover, Dialog, Toast, EmptyState, Focus, Cover
 - asset: มาสคอต 10 ท่า · โลโก้ Block Lab + **Arm Lab (ไฟล์จริง รอบ 3)**
+
+## ตัดสินแล้ว (ผู้ใช้ 2026-11-09 · quiz OQ62, OQ63, OQ73, OQ81 · เติมแล้วบางส่วน DS v24)
+
+ตรวจกับ DS ปัจจุบัน (tokens.json, bundle.css, README §7) 2026-11-09: ไม่มีของทั้ง 4 ข้อ · ไม่มีไอคอน `lightbulb` `volume-2` `volume-x`
+- **G19 · ตัวบอกครั้งที่ตอบ (OQ81):** ✔ v24 `AttemptDots` (`sb-att` · จุด `icon-sm` 16 ขอบ `border-default` `text-secondary` · ใช้แล้ว = ทึบ รวมครั้งนี้ · ข้อความ 14/600 · ผู้ใช้เลือกแบบ "จุดทึบ = ใช้แล้ว") · component ใหม่ `AttemptDots` จาก token เดิม · จุดใช้แล้ว/เหลือ + ข้อความ "ครั้งที่ n จาก 3" (2 สำหรับ `02`/`10`) คู่เสมอ · ห้ามใช้ `sb-dev-dot`
+- **G20 · เสียงตอบสนอง (OQ73):** ✔ v24 ไอคอน `volume-2`/`volume-x` (ปุ่ม `sb-ibtn` สลับไอคอน + aria-label ไม่ใช้ aria-pressed · README §7) · ✗ ไฟล์เสียงยังไม่เติม (รอคัดชุด CC0 ให้ผู้ใช้ฟัง) · ชุดเสียง CC0 (วาง · ต่อ · กด · เฉลิมฉลอง) session หลักคัดให้ผู้ใช้ฟังและอนุมัติก่อนเข้า DS · ไอคอน `volume-2`/`volume-x` สำหรับปุ่มสลับเสียงเดี่ยว (OQ79)
+- **G1/G11 · node ภารกิจ (OQ62):** ✗ ยังไม่เติม (รอไฟล์ SVG ใหม่ที่ไม่ฝัง bitmap) · นำ Pass/Current/Lock.svg เข้า DS เป็น asset + component ครอบ + variant "ผ่านไม่มีดาว" · ต้องได้ SVG ใหม่ไม่ฝัง bitmap ก่อน · เวกเตอร์เต็มภายหลัง
+- **G18 · หน้าเล่นเกม (OQ63):** ✔ v24 `GameHud` (`sb-hud` แถบเดียว เป้าหมาย │ ตัวนับบล็อก │ ปุ่มใบ้ `sb-btn-secondary sb-btn-sm` + `lightbulb` · ครบ budget = `triangle-alert` `warning-strong` + "ครบแล้ว" · ผู้ใช้เลือกแบบแถบเดียว) · ✗ ฉาก world/จอยสติ๊กยังไม่เติม · เติม HUD (ชื่อเป้า/ตัวนับ budget) + ตัวนับบล็อก + ไอคอน `lightbulb` ตอนนี้ · ฉาก world/จอยสติ๊กตาม engine ภายหลัง
 
 ## ตัดสินแล้ว (ผู้ใช้ 2026-11-04 · ci-audit §7.4 · ย้ายออกจากค่าชั่วคราว)
 

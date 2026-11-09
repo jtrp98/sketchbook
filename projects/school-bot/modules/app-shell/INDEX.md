@@ -1,6 +1,6 @@
 ---
 module: app-shell
-updated: 2026-11-06
+updated: 2026-11-09
 status: draft
 depends_on: []
 ---
@@ -84,6 +84,7 @@ depends_on: []
 4. Designer ตัดแยกมาสคอตท่าละไฟล์ (DEL-09)
 
 ## สถานะ
+- **2026-11-09 R5 เพิ่มยืนยันก่อนปิดโปรแกรมขณะทำด่านบทเรียน (ผู้ใช้ตัดสิน · quiz ST-14)** · สถานะคง `draft` (อยู่ `draft` แล้ว) · ดู CHANGELOG
 - Feasibility: **ruler ตรวจ R7 (sidebar 5 เมนู + เกม) 2026-11-06 = ทำได้มีเงื่อนไข** (feasibility/R7.md) · R# อื่นยังไม่ได้ตรวจโดย ruler (มีข้อมูลอ้างอิงจาก Architect เดิม GO WITH CONDITIONS ใน feasibility.md และ feasibility/)
 - OQ ที่ยังเปิด: OQ2, OQ3, OQ4, OQ6, OQ7, OQ9, OQ10, OQ11, OQ12, OQ13, OQ20 ตอบครบ 2026-11-06 (เกมแนะนำเป็นการ์ดข้าง "เรียนต่อ") · OQ21–OQ24 ตอบแล้ว 2026-11-06 → แก้ R7/R12/AC-04 แล้ว (OQ6 = DEV-Q01 ติดอยู่กับ dev/SchoolBright · ไม่ block ออกแบบ)
 - Review: ยังไม่ได้ทำโดย highlighter · นำเข้าผล Auditor เดิมรอบ 1 (RETURN · ข้อของแถบหน้าต่าง F01 สูง, F03/F04 กลาง, F05/F06 ต่ำ) ใน review.md
