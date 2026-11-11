@@ -1,6 +1,6 @@
 ---
 project: school-bot
-updated: 2026-11-09
+updated: 2026-11-11
 scope: สรุปการเติมเนื้อหา Design System artifact (รอบที่ 3 · ไม่ใช่งานของ module · ไม่มี D#)
 ---
 
@@ -130,7 +130,7 @@ CI = CI ของ School Bot Studio: ของที่ Arm Lab/DS มีแล�
 
 ### DS gap จาก ruler ตรวจ quiz (2026-11-05 · session หลักตรวจกับ DS v14 แล้ว)
 - **การ์ด Level สถานะล็อก:** ไม่ใช่ gap · DS `Card` มี state "ปิดใช้" (`aria-disabled` พื้น `off-bg` ขอบ `border` ตัว `text-secondary` ไม่นูน + popup เหตุผล) · ป้าย "ชั้นของฉัน" ตัดออกแล้ว (OQ41) จึงไม่ต้องใช้ชิปมีกรอบ
-- **G9 · select/dropdown เลือก access ต่อระดับชั้น (ป.1–6 × Level 1–6) บนเว็บครู:** DS gap · ใช้ที่ teacher-web (ยังไม่มี R#) · ใกล้เคียงที่สุด: `Tab` (segmented), `Dialog` · ตาราง = DSG-07 เดิม · คิว: เมื่อเพิ่ม req teacher-web
+- **G9 · select/dropdown เลือก access ต่อระดับชั้น (ป.1–6 × Level 1–6) บนเว็บครู:** DS gap · ใช้ที่ school-bot-web (ยังไม่มี R#) · ใกล้เคียงที่สุด: `Tab` (segmented), `Dialog` · ตาราง = DSG-07 เดิม · คิว: เมื่อเพิ่ม req school-bot-web
 
 ### DS gap จากแพลตฟอร์มเกม + ruler ตรวจ app-shell R7 / quiz R4·R7 (2026-11-06 · session หลักตรวจกับ DS v18 แล้ว · ผู้ใช้ตัดสินแล้ว · **เติมแล้ว DS v19** id `1793947661-0038` ยกเว้น G11)
 - **G10 · ไอคอนเมนู "เกม":** ✔ v19 (`gamepad-2` ใน bundle.js) · bundle.js มี 32 ไอคอน ไม่มีไอคอนเกม (`play` ใช้กับปุ่มรันแล้ว) · **ผู้ใช้เลือก: เติม Lucide `gamepad-2`** ในชุดไอคอน · ใช้ที่ sidebar รายการที่ 3 (app-shell R7)
@@ -145,3 +145,8 @@ CI = CI ของ School Bot Studio: ของที่ Arm Lab/DS มีแล�
 - **G16 · ภาพเกม 13 ภาพ:** ผู้ใช้เลือก = **ภาพจากฉากเกมจริงที่ engine วาด** (CON-05) · ระหว่างยังไม่มี ใช้ `sb-card-media is-placeholder` (ไอคอนหมวด) · สัดส่วนภาพตัดสินตอนออกแบบฉากเกม · ยังไม่มีภาพ
 - **G17 · ไอคอนทักษะ/หมวด:** ✔ v22 เติม Lucide `brain` (AI), `zap` (วงจร), `workflow` (flowchart), `cog` (สร้างระบบ) · หุ่น = `bot` · บล็อก = `blocks` (ตรวจภาพแล้ว)
 - **G18 · แถวรายการด่าน + ชุดหน้าเล่น** (HUD, ปุ่มรัน/ทีละก้าว/เริ่มใหม่, แผงใบ้, จอยสติ๊ก, ตัวนับบล็อก, ภาพฉากแต่ละ world · ใช้ร่วม quiz R3): ผู้ใช้เลือก = **crayon เสนอตอนออกแบบ** เป็น DS gap ทีละชิ้น แล้วผู้ใช้อนุมัติก่อนเติม · ยังไม่ทำ
+
+### DS gap จาก arm-lab D5 อ่านท่าทีละข้อ (2026-11-11 · OQ109 · ผู้ใช้อนุมัติ · เติม DS Version 26 `1794382709-abb3`)
+- **G21 · Badge (เครื่องหมายซ้อนมุม):** ✔ component ใหม่ `Badge` (`sb-badge-host` + `sb-badge`) · วงกลม `icon-lg` 24 · `radius-pill` · พื้น `action-primary` · ไอคอน `icon-sm` 16 `text-on-dark` · ขอบ `border-default` `surface` · ใช้ครั้งแรก: `lock` บนวงกลม ID ข้อต่อที่อ่านแล้วล็อก
+- **G22 · ปุ่มข้อความกดค้าง:** ✔ `sb-btn-secondary[aria-pressed="true"]` พื้น `action-primary-subtle` ขอบ `action-primary` ตัว `action-primary` + ไอคอนนำหน้าเสมอ · ใช้ครั้งแรก "อ่านท่า S#"/"เลิกอ่าน S#"
+- **ค่าสด vs ค่าที่ล็อก:** ไม่ใช่ gap · ข้อที่ล็อกแสดงไอคอน `lock` ข้างตัวเลข (มีใน DS)

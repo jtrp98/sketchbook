@@ -363,10 +363,10 @@ DESIGN.md หมวด 8–16 (components, patterns) ยังเป็น TODO 
 
 | DSG | ต้องการอะไร | ใช้ที่ module | ข้อเสนอ |
 |---|---|---|---|
-| DSG-04 | ฟอร์ม: ช่องกรอก, ช่องค้นหา combobox, ข้อความ error ใต้ช่อง | app-shell, teacher-web | ตาม radius/border/focus หมวด 4 |
+| DSG-04 | ฟอร์ม: ช่องกรอก, ช่องค้นหา combobox, ข้อความ error ใต้ช่อง | app-shell, school-bot-web | ตาม radius/border/focus หมวด 4 |
 | DSG-05 | การ์ดคำถาม 3 แบบ (เลือกตอบ เรียงลำดับ จับคู่) + ดาว 0–3 | quiz | แบบปุ่มนูน |
 | DSG-06 | การ์ดงาน + เมนู ⋯ + ป้าย sync | app-shell, my-work | ต่อยอดการ์ดงานจาก HomeV6A |
-| DSG-07 | ตารางข้อมูล + แถบตัวกรองตามลำดับ (ค้นหา เรียง แถวเยอะ) | teacher-web | component ใหม่ |
+| DSG-07 | ตารางข้อมูล + แถบตัวกรองตามลำดับ (ค้นหา เรียง แถวเยอะ) | school-bot-web | component ใหม่ |
 | DSG-08 | wizard ติดตั้ง | app-shell | layout ใหม่ ใช้ token เดิม |
 | DSG-09 | ชิ้นส่วนตัวจำลองวงจร + stage | block-lab | ภาพเวกเตอร์เรียบสไตล์เดียวกับไอคอน (D-21) ไม่จ้างวาด (NFR-01) |
 | DSG-10 | เกณฑ์เหรียญ (ENT-12) | quiz | เสนอ 3 แบบให้ผู้ใช้เลือก: ผ่านหน่วยครบ / ได้ 3 ดาวครบหน่วย / เล่นต่อเนื่อง |

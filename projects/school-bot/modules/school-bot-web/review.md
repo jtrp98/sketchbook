@@ -1,5 +1,5 @@
 ---
-module: teacher-web
+module: school-bot-web
 updated: 2026-10-21
 ---
 

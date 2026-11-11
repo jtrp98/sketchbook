@@ -1,7 +1,7 @@
 ---
 module: arm-lab
-updated: 2026-11-06
-status: approved
+updated: 2026-11-11
+status: draft
 depends_on: [app-shell, my-work]
 ---
 
@@ -16,13 +16,13 @@ depends_on: [app-shell, my-work]
 | ไฟล์ | อ่านเมื่อ |
 |---|---|
 | requirements.md | ต้องรู้ว่าต้องทำอะไร (R1–R17, กฎ, ตัวเลข/ขีดจำกัด, edge case) |
-| oq.md | ต้องรู้ว่ามีอะไรยังไม่ตัดสิน (OQ1–OQ103) |
+| oq.md | ต้องรู้ว่ามีอะไรยังไม่ตัดสิน (OQ1–OQ111) |
 | feasibility.md | ผล feasibility รวม (ruler 2026-10-21) + ตารางผลรายข้อ + เงื่อนไขหลัก + สถานะที่ขาด (H1/H5/H9) + BUG ของ frame ฐาน (ข้อมูล BUG/EDIT จาก Architect เดิม) |
 | feasibility/R1.md | R1, R2, R3, R10: ฐาน 6A, โปรโตคอล Pi, แขนบนจอไม่ขยับ, ป.1–6 (ARC-I04, DEV-Q02) |
 | feasibility/R4.md | R4: โหมดครู (SCR-14, SCR-15, ST-26) |
 | feasibility/R5.md | R5, R11, R16: ปุ่มหยุด, เชื่อมต่อหุ่น, หลุด/เชื่อมกลับ (SCR-12/13, ตาราง ST-19–24/48, ARC-I31, DEV-Q15) · ตรวจใหม่ 2026-11-04 ทางเข้าไฮไลต์ (OQ30–OQ34) · รอบ 3–6 · รอบ 7 (2026-11-05) R16 modal หลุด/เชื่อมกลับเอง (OQ64–OQ69) · รอบ 8 (2026-11-05) ตรวจบรรทัด "แก้ 2026-11-05" + รายการเกลา requirements.md 26 จุด (OQ71–OQ78) · รอบ 9 (2026-11-06) R16 ฉากหลัง offline คลุมปุ่มหยุด / dialog lab เว้น nav (OQ79–OQ84) · รอบ 10 (2026-11-06) ปุ่มหยุดใน dialog / ประคองแขน vs เมนู (OQ85–OQ89) · **ท้ายไฟล์: รอบ 11 (2026-11-06) แถบเหลือง / ประคองแขนปิดได้ (OQ90–OQ92)** |
 | feasibility/R6.md | R6–R9: บันทึก cloud, export .ini, กู้คืนสำรอง, นำเข้า (เทียบ my-work) |
-| feasibility/R12.md | R12–R15, R17: ท่า, ข้อต่อ/ขีดจำกัด, แก้/อ่านท่า, การเล่น, เมนูและคีย์ลัด |
+| feasibility/R12.md | R12–R15, R17: ท่า, ข้อต่อ/ขีดจำกัด, แก้/อ่านท่า, การเล่น, เมนูและคีย์ลัด · **ท้ายไฟล์: R14 รอบ 2026-11-11 อ่านท่าทีละข้อ (OQ104–OQ108)** |
 | design/ | แก้หรือตรวจ design (D1 มือคีบ % · D2 หน้าเชื่อมต่อ · D4 หุ่นหลุด/ต่อกลับ · ดูตาราง Design) |
 | review.md | ดูผลตรวจ (รอบ 2026-11-06 D4 โดย highlighter · รอบ 2026-11-04 D1 โดย highlighter · รอบ 2026-10-21 นำเข้าผล Auditor เดิม AUD-F01, F02, F07–F09) |
 | handoff.md | ส่งต่อ dev (ยังไม่มี) |
@@ -33,8 +33,8 @@ depends_on: [app-shell, my-work]
 
 | ID | ชื่อ | ลิงก์ | สิทธิ์ | ใช้กับ |
 |---|---|---|---|---|
-| C1 | School Bot – หน้าควบคุมแขนกล (ประถม) (Canvas A) | https://claude.ai/artifact/AnEWv6UNbgcNvUXS1sfHQd | shared ในองค์กร (ผู้ใช้เป็นเจ้าของ · `read` ได้ 2026-11-04) | R1–R17 · frame ของ Arm Lab: MainV6A (FRM-02) + component, TeacherLoginV1 (FRM-04), ConnectV3 (FRM-06), TeacherV5A (FRM-08) · **D1** (แก้ที่ MainV6A + MainV6AJoints + MainV6ASeq + MainV6ABar) · **D2** (ConnectV3 + wrapper Many/Connected/Fail2) · **รอบ 2 nav bar (2026-11-04): MainV6A/MainV6ATopBar รวมเป็นแถบ N1 สูง 60 (WindowBarV1 nav=n1) + พื้นที่ 840 · เอาการ์ดอุปกรณ์ใน body ออก ขยายเวที · TeacherLoginV1/TeacherV5A = N1 แบบเชื่อมต่อ · **ConnectV3 ไม่ถูกแตะ** (ผู้ใช้แก้อีกแชท · WindowBarV1 คงโหมดแถบเก่า 44 ให้) · publish แล้วที่ C1 v757 (2026-11-04 · ผู้ใช้อนุมัติ · ยังไม่ได้เปิดดู render จริง) · **ConnectV3 + wrapper แก้ตาม D2 แล้ว ใช้ DS (`ds/school-bot/tokens.css`, `bundle.css`) + WindowBar N1 · C1 v758 (2026-11-04)**** |
-| C2 | School Bot – Arm Lab หุ่นหลุด/ต่อกลับ (C2) | https://claude.ai/artifact/C8knAvyREPQhD6pe9wDaYn | private (ผู้ใช้เป็นเจ้าของ · สร้างโดย session หลัก 2026-11-06) | R5, R11, R14, R16, R17 · **D4** publish v20 `1793951067-ed9c` (2026-11-06 · ModalFoundPort ไอคอน `triangle-alert` ตาม OQ103 · v19 แก้ตาม review F1–F22 + OQ96–OQ101 · DS v21 ติดตั้งที่ `ds/school-bot/`): Main (modal หลุด), ModalNoReply, ModalNoReplyStopped, ModalPortGone, MenuOverStop, ModalFoundPort, ModalOtherRobot, ModalAutoFail, BannerLost, BannerStopPressed, BannerNoReply, BannerNoReplyStopped, BannerReduced, BackAsk, BackAskArmWeak, BackGoing, BackStopped, BackFailed, BackAskStopped, HoldArm, BannerArmWeak, NavChips + component ArmShell (หน้า Arm Lab ย่อจาก MainV6A) |
+| C1 | School Bot – หน้าควบคุมแขนกล (ประถม) (Canvas A) | https://claude.ai/artifact/AnEWv6UNbgcNvUXS1sfHQd | shared ในองค์กร (ผู้ใช้เป็นเจ้าของ · `read` ได้ 2026-11-04) | R1–R17 · frame ของ Arm Lab: MainV6A (FRM-02) + component, TeacherLoginV1 (FRM-04), ConnectV3 (FRM-06), TeacherV5A (FRM-08) · **D1** (แก้ที่ MainV6A + MainV6AJoints + MainV6ASeq + MainV6ABar) · **D2** (ConnectV3 + wrapper Many/Connected/Fail2) · **รอบ 2 nav bar (2026-11-04): MainV6A/MainV6ATopBar รวมเป็นแถบ N1 สูง 60 (WindowBarV1 nav=n1) + พื้นที่ 840 · เอาการ์ดอุปกรณ์ใน body ออก ขยายเวที · TeacherLoginV1/TeacherV5A = N1 แบบเชื่อมต่อ · **ConnectV3 ไม่ถูกแตะ** (ผู้ใช้แก้อีกแชท · WindowBarV1 คงโหมดแถบเก่า 44 ให้) · publish แล้วที่ C1 v757 (2026-11-04 · ผู้ใช้อนุมัติ · ยังไม่ได้เปิดดู render จริง) · **ConnectV3 + wrapper แก้ตาม D2 แล้ว ใช้ DS (`ds/school-bot/tokens.css`, `bundle.css`) + WindowBar N1 · C1 v758 (2026-11-04)**** · **D5 (MainV6A, MainV6AJoints, MainV6AStage, MainV6ABar + DS bundle v26 · แก้ในเครื่อง รออนุมัติ publish · 2026-11-11)** |
+| C2 | School Bot – Arm Lab หุ่นหลุด/ต่อกลับ (C2) | https://claude.ai/artifact/C8knAvyREPQhD6pe9wDaYn | private (ผู้ใช้เป็นเจ้าของ · สร้างโดย session หลัก 2026-11-06) | R5, R11, R14, R16, R17 · **D4** publish v20 `1793951067-ed9c` (2026-11-06 · ModalFoundPort ไอคอน `triangle-alert` ตาม OQ103 · v19 แก้ตาม review F1–F22 + OQ96–OQ101 · DS v21 ติดตั้งที่ `ds/school-bot/`): Main (modal หลุด), ModalNoReply, ModalNoReplyStopped, ModalPortGone, MenuOverStop, ModalFoundPort, ModalOtherRobot, ModalAutoFail, BannerLost, BannerStopPressed, BannerNoReply, BannerNoReplyStopped, BannerReduced, BackAsk, BackAskArmWeak, BackGoing, BackStopped, BackFailed, BackAskStopped, HoldArm, BannerArmWeak, NavChips + component ArmShell (หน้า Arm Lab ย่อจาก MainV6A) · **D5 ถ้อยคำแขนอ่อนแบบกลาง: HoldArm, ArmShell (BannerArmWeak) · Version 34 `1794379449-a773` (2026-11-11)** |
 
 หมายเหตุ C1: canvas นี้มี frame ของ module อื่นด้วย (HomeV6A + HomeRail + WindowBarV1 สำเนา → `app-shell` · MyWorkV1/MyWorkV1Block → `my-work` · LearnMapV1 → `quiz`) → กฎ "1 canvas อยู่ใน module เดียว" ลงทะเบียนไว้ที่ module นี้ก่อน · รอผู้ใช้ตัดสินถ้าต้องแยก canvas
 canvas อื่นในระบบเก่า (ยังไม่ลงทะเบียน): Canvas B เข้าระบบ+บทเรียน (WindowBarV1 ต้นฉบับ) · Canvas C Block Studio · ARCHIVE ของ Canvas A (46 ไฟล์ฉบับเก่า) · ดู `app-shell`, `block-lab`
@@ -50,6 +50,10 @@ canvas อื่นในระบบเก่า (ยังไม่ลงท�
 | FRM-07 | กู้คืนงานสำรอง (SCR-10) | ยังไม่สร้าง | module `my-work` |
 
 ข้อควรรู้เมื่อแตะ frame: MainV6A มี logic/state ทั้งหมด (dialog กู้คืน/นำท่าจากงานอื่น/ออก/เริ่มใหม่, ลิ้นชักประวัติ, เมนูซ้อน) ส่ง `vals6` ให้ component ลูก · CSS `.sc-host` = display:contents · ตรวจ emoji ด้วย `tools/check_emoji.py` ของ skill schoolbot-design (ไม่อยู่ใน repo นี้) · แยก component เกิน ~150 KB (ดู `../../context.md` บทเรียน canvas)
+
+**สถานะ:** `approved` (2026-11-11 · ผู้ใช้ยืนยันหลัง ruler ตรวจ R14 ทำได้มีเงื่อนไข + ตอบ OQ104–OQ108) · ก่อนหน้านั้น `draft` (2026-11-11 · แก้ R14 อ่านท่าทีละข้อ · ต้องให้ ruler ตรวจก่อน approved · ขึ้นกับ OQ1 ว่า Pi อ่านค่าสดตอนคลายได้)
+
+**สถานะ:** `approved` → `draft` (2026-11-11 · ผู้ใช้เปลี่ยน req คลายแขน: ตัดอ่านรายข้อ เหลืออ่านทุกข้อเข้าท่านี้/เป็นท่าใหม่ · รอตอบ OQ112 แล้วแก้ R14 + ruler · C1 ยังไม่ publish)
 
 ## ติดตาม R → D → OQ
 
@@ -70,7 +74,7 @@ D1 (มือคีบ % · R13/R15) มีแล้ว · D2 (หน้าเ�
 | R11 | เชื่อมต่อหุ่น USB · สถานะ | D2 (publish C1 v758) · D4 (ชิป N1 หลุด/กำลังเชื่อมต่อ · Attention Ring · C2 v20) | OQ5, OQ14, OQ27 (DS ที่เหลือ), OQ34 (DS gap), OQ61 · answered: OQ99, OQ100, OQ93, OQ94 (DS v20), OQ90, OQ92 · answered: OQ85, OQ80, OQ84, OQ73, OQ74, OQ75, OQ76, OQ78 (DS v16), OQ25, OQ26, OQ28–OQ33, OQ36, OQ38, OQ39, OQ41, OQ43–OQ49, OQ54, OQ55, OQ57, OQ58, OQ64, OQ65, OQ70 |
 | R12 | ท่าและท่าชุด (G####/K####, ท่า 0, เลิกทำ 6 วินาที) | - | OQ11, OQ17, OQ20 |
 | R13 | ข้อต่อและขีดจำกัด (±180/±135/0–100%, 1000–9000 ms) · มือคีบเป็น % ไม่มีองศา/เลข 0 กลางแถบ | D1 | OQ17, OQ22, OQ23, OQ24 |
-| R14 | แก้ท่า · อ่านท่าปัจจุบัน · ประวัติ | D4 (เฉพาะหน้าจอประคองแขน + ปลดล็อกข้อต่อปิด · C2 v20) | OQ1, OQ12, OQ17, OQ18 · answered: OQ98, OQ93, OQ91, OQ92 · answered: OQ87, OQ83, OQ71, OQ72, OQ74, answered: OQ52, OQ58 |
+| R14 | แก้ท่า · อ่านท่าปัจจุบัน · ประวัติ | D4 (เฉพาะหน้าจอประคองแขน + ปลดล็อกข้อต่อปิด · ถ้อยคำแขนอ่อนแบบกลาง C2 Version 34) · D5 (อ่านท่าทีละข้อ · C1 แก้แล้ว ยังไม่ publish) | OQ111 · answered: OQ109, OQ110 · OQ1, OQ12, OQ17, OQ18, OQ104, OQ105, OQ106, OQ107, OQ108 · answered: OQ98, OQ93, OQ91, OQ92 · answered: OQ87, OQ83, OQ71, OQ72, OQ74, answered: OQ52, OQ58 |
 | R15 | การเล่น (popup ขยับครั้งแรก, ช่วงท่า, รอบ, รายการก้าวไกล 30° ไม่นับมือคีบ) | D1 | OQ1, OQ11, OQ14, OQ60 · answered: OQ86, OQ82, OQ84, OQ71, OQ72, OQ77, answered: OQ16, OQ24, OQ43–OQ46, OQ50–OQ52, OQ56, OQ57 (ค ท่าพัก = ท่า 0 รอ OQ11), OQ58, OQ67 |
 | R16 | หุ่นหลุดและเชื่อมกลับ (ST-21 · modal หลุด/ต่อกลับ) | D2 (publish C1 v758) · D4 (publish C2 v20) | OQ11, OQ14, OQ18, OQ40 (ถ้อยคำ), OQ61 · answered: OQ102 (ร่าง D4), OQ103 (DS gap ปิด), OQ96–OQ101, OQ95, OQ93, OQ94, OQ90, OQ91, OQ92 · answered: OQ85–OQ89, OQ79–OQ84, OQ69 (DS v16), OQ73, OQ75, OQ76, OQ78 (DS v16), OQ15, OQ16, OQ25, OQ26, OQ28–OQ33, OQ35–OQ39, OQ41, OQ43–OQ53, OQ57, OQ58, OQ62–OQ68, OQ70 |
 | R17 | เมนู ☰ และคีย์ลัด | D4 (เฉพาะไม่มี Esc บน modal R16 + เมนู ☰ ซ้อน dialog ไม่ทับปุ่มหยุด · C2 v20) | answered: OQ97, OQ86 (คีย์ลัด nav ขณะ dialog เปิด = เลือกเมนู), OQ81, OQ82, OQ13, OQ15, OQ73, OQ74 |
@@ -82,6 +86,7 @@ D1 (มือคีบ % · R13/R15) มีแล้ว · D2 (หน้าเ�
 | D1 | R13, R15 (มือคีบ S5 เป็น %, ข้อความเก็บนิ้ว) | design/D1-gripper-percent.md | C1 | MainV6A (ฐานของ frame), MainV6AJoints, MainV6ASeq, MainV6ABar | publish แล้ว (C1 v756) | 2026-11-04 |
 | D3 | R5, R11, R14, R15, R16 (demo เชื่อมหุ่นกลับ: Modal ตรวจตำแหน่งแขน แทน popup ขยับครั้งแรก · ผู้ใช้ตัดสิน 2026-11-05) | design/D3-reconnect-demo.md | Artifact แยก (ไม่ใช่ C1) | https://claude.ai/artifact/WYjPc8w5Kv1SmT8LNEwJKs (private · v1) | 2026-11-05 |
 | D4 | R16, R5, R14, R11, R17 (หุ่นหลุด/ต่อกลับ: modal หลุด/หุ่นไม่ตอบ/พบหุ่นที่พอร์ต/หุ่นตัวอื่น · แถบเหลือง `sb-banner-warn` · ต่อกลับแล้ว→ท่าพัก/หยุด/ไม่สำเร็จ · ประคองแขน · ชิป N1) | design/D4-disconnect-reconnect.md | C2 | 22 artboard + ArmShell (ดูตาราง Canvas) | publish แล้ว (C2 v20 `1793951067-ed9c` · DS v21 · ยังไม่ได้เปิดดู render) · แก้ตาม review 2026-11-06: F1–F12, F14, F15, F19, F21, F22 แก้แล้ว · F13/F18 บางส่วน · F16/F17 ค้าง (requirement/DS) · F20 ไม่ทำ · ไม่มี DS gap (OQ103 ปิด: `warn` + `triangle-alert`) · OQ102 ร่าง (1)–(5) ตัดสินแล้ว · ค้าง OQ40 | 2026-11-06 |
+| D5 | R14 (อ่านท่าทีละข้อ: โหมดคลายแขน, ปุ่มสลับอ่าน/เลิกอ่าน S#, ล็อกทั้งหมด, ค่าสด, ปุ่มสั่งขยับปิด, lock บนวงกลม ID) + ถ้อยคำแขนอ่อนแบบกลางใน D4 | design/D5-read-pose-per-joint.md | C1 (+ C2 ถ้อยคำ) | C1: MainV6A, MainV6AJoints, MainV6AStage (ใบสั่งแก้ E1–E8) · C2: HoldArm, BannerArmWeak (ArmShell) | C1 แก้ในเครื่องแล้ว (จาก C1 `1794362983-1a9b` · DS v26) ยังไม่ publish รออนุมัติ canvas แชร์ · OQ111 open · C2 publish Version 34 `1794379449-a773` | 2026-11-11 |
 | D2 | R11, R16, R5 (หน้าเชื่อมต่อหุ่น: แถบปุ่มล่างตายตัว, แตะการ์ดเลือก, ชื่อเดียว, AUD-F02/F07/F08/F09, CR-11) | design/D2-connect-actions.md | C1 | ConnectV3 (FRM-06) + wrapper Many/Connected/Fail2 | publish แล้ว (C1 v758 · DS v12 · 2026-11-04 · ยังไม่ได้เปิดดู render จริง) · OQ42: เปลี่ยนหุ่นไม่มี guard (MainV6A, C1 v763) | 2026-11-04 |
 
 ## ขั้นถัดไปที่ระบบเก่าวางไว้
@@ -90,6 +95,9 @@ D1 (มือคีบ % · R13/R15) มีแล้ว · D2 (หน้าเ�
 3. ผู้ใช้: ตรวจ EDIT-09/EDIT-10 บน canvas · ตอบ OQ11 กับ firmware
 
 ## สถานะ
+- **2026-11-11 (crayon · D5 แก้ C1 ตาม OQ109/OQ110):** แก้ MainV6A, MainV6AJoints, MainV6AStage, MainV6ABar ในเครื่อง (อ่านจาก C1 `1794362983-1a9b`) + นำเข้า DS v26 `bundle.css`/`bundle.js` · ยังไม่ publish (C1 แชร์ ต้องอนุมัติ) · ไม่มี DS gap · E8 ไม่ได้ทำ → OQ111 `open` · สถานะคง `approved`
+- **2026-11-11 (crayon · D5 อ่านท่าทีละข้อ):** C2 publish Version 34 (`1794379449-a773`) ถ้อยคำแขนอ่อนแบบกลาง (HoldArm, ArmShell/BannerArmWeak) · C1 ยังไม่แก้: DS gap 3 (OQ109) + เรื่องที่ req ไม่ระบุ (OQ110) + C1 แชร์ต้องอนุมัติ publish · ใบสั่งแก้ E1–E8 อยู่ใน D5 · สถานะคง `approved`
+- **2026-11-11 (ruler · R14 อ่านท่าทีละข้อ):** ผล feasibility **ทำได้มีเงื่อนไข** (ไม่เปลี่ยน · firmware ต้อง stream ค่าตอนคลาย + คลาย/ล็อกรายข้อ = OQ106) · **ยังไม่พร้อม `approved`** (status คง `draft`) · ไม่มี DS gap ที่ยืนยัน (อ่าน DS ไม่ได้รอบนี้ · ต้องตรวจไอคอนล็อกบนวงกลม ID/ปุ่มสลับก่อนออกแบบ) · เปิด OQ104–OQ108 `open` (agent ไม่มี AskUserQuestion → session หลักถาม) · **ก่อน approved:** OQ104 (เลิกอ่านแล้วค่าค้าง), OQ105 (สถานะผสม/ปุ่มหยุด/คำสั่งขยับ/ออกหน้า/ข้อความแขนล็อก), OQ107 (บิดเกินขีดจำกัด) · **ก่อน designed:** OQ108 · **ก่อนส่ง dev:** OQ106 · ดู `feasibility/R12.md` "R14 รอบ 2026-11-11"
 - **2026-11-06 (crayon · D4 ตาม OQ102/OQ103):** publish C2 v20 (`1793951067-ed9c`) แก้เฉพาะ `ModalFoundPort` (ไอคอน plug → `triangle-alert` ในกล่อง `sb-dialog-ico warn`) · ร่าง OQ102 (1)–(5) เป็นข้อตัดสินใน D4 · ไม่มี DS gap · สถานะคง `approved` (R# อื่นยังไม่มี D#) · ไม่แตะ C1
 - **2026-11-06 (crayon · D4 แก้ตาม review + OQ96–OQ101):** publish C2 v19 (`1793950755-2a41`) · DS v21 (`1793949954-61ae`) ติดตั้งแทน v20 · F1 สูง แก้แล้ว (ปุ่มหยุดใน modal ต่อกลับแล้ว) · artboard ใหม่ 7 (ModalNoReplyStopped, ModalPortGone, MenuOverStop, ModalAutoFail, BannerNoReplyStopped, BannerReduced, BackAskStopped) · DS gap 1 → OQ103 `open` (ไม่ block) · ร่างถ้อยคำ/วิธีแสดง → OQ102 `open` (agent ไม่มี AskUserQuestion → session หลักถาม) · ค้าง F13 บางส่วน, F16, F17, F18 · สถานะคง `approved` (R# อื่นยังไม่มี D#) · ไม่แตะ C1
 - **2026-11-06 กลับ `draft`:** แก้ R11/R16 ตาม review D4 (OQ96, OQ101, F11) · DS v21 (OQ97–OQ100) · **ผู้ใช้ยืนยัน `approved` 2026-11-06** → crayon แก้ D4

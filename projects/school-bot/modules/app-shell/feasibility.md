@@ -29,7 +29,7 @@ updated: 2026-11-06
 ## R10–R12: UI เดียว ป.1–6, ขนาดจอ, ชื่อ/ถ้อยคำ
 
 - **R10 (NFR-01, NFR-02, ARC-I20, CF-02, RSK-04):** CF-02 frame เดิมสมมติผู้ใช้ ป.4–6 → ข้อความ ขนาด ความซับซ้อนของทุกหน้าต้องปรับ (Open → Architect/Auditor เดิม · ในโปรเจกต์ใหม่ highlighter ตรวจ) · ARC-I20 (m, Closed): 3 ภาษาทำให้ป้ายล้น → ออกแบบเผื่อ +40% ภาษาจีนสั้นกว่า (Delegated → Designer) · ตัวเลขใน brand: control/เนื้อหาหลัก ≥16px, เป้าสัมผัส 44×44 (Proposed)
-- **R11 (CR-09, D-14, NFR-03):** หน้าต่าง 1440×900 หักแถบ 44 → พื้นที่หน้าจอ 856 · ผลกระทบเดิม: frame ที่ Done (FRM-01–04) + Draft ใน Canvas A, C ต้องจัดใหม่ให้พอดี 856 · Canvas A ทำครบ (EDIT-09 + EDIT-10) · เหลือ Canvas C และการแก้ D-14 โดยเจ้าของ design system · frame ใหม่ใน Canvas B ออกแบบที่ 856 ตั้งแต่แรก · ARC-I19 (m): เว็บครูออกแบบที่ 1280 ขึ้นไป รองรับแท็บเล็ต 1024 (teacher-web)
+- **R11 (CR-09, D-14, NFR-03):** หน้าต่าง 1440×900 หักแถบ 44 → พื้นที่หน้าจอ 856 · ผลกระทบเดิม: frame ที่ Done (FRM-01–04) + Draft ใน Canvas A, C ต้องจัดใหม่ให้พอดี 856 · Canvas A ทำครบ (EDIT-09 + EDIT-10) · เหลือ Canvas C และการแก้ D-14 โดยเจ้าของ design system · frame ใหม่ใน Canvas B ออกแบบที่ 856 ตั้งแต่แรก · ARC-I19 (m): เว็บครูออกแบบที่ 1280 ขึ้นไป รองรับแท็บเล็ต 1024 (school-bot-web)
 - **R12 (DEC-01, CF-05, BUG-04):** CF-05 ชื่อทางการ vs "School Bot Academy"/"Block Studio" ใน frame (Open → Designer แก้ด่วนได้) · EDIT-02 แก้ข้อความ sidebar กาง "School Bot / Academy" → "School Bot / Studio", aria-label โลโก้ → School Bot Studio, ☰ › "เกี่ยวกับ School Bot Studio" · **โลโก้รูปบนแถบบนยังเป็น "School Bot" รอไฟล์** (OQ4)
 - ข้อมูลตัวอย่างที่ Designer ใช้เป็นขอบเขตทดสอบ: ชื่อไทยยาวสุด ~30 ตัวอักษร, ห้อง 45 คน, งาน 60 ชิ้น, ข้อความ EN/中文 ยาว +40%
 
